@@ -1,0 +1,5 @@
+[project]
+name = "user-app"
+version = "1.0.0"
+description = "FastAPI SQLite user CRUD API"
+requires-python = ">=3.8"
