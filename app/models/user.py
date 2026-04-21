@@ -21,3 +21,6 @@ class User(Base):
     date_of_birth: Mapped[date] = mapped_column(Date, nullable=False)
     gender: Mapped[str] = mapped_column(String(50), nullable=False)
     created_by: Mapped[date] = mapped_column(Date, nullable=False)
+    password_hash: Mapped[str] = mapped_column(String(255), nullable=False)
+    holds: Mapped[str] = mapped_column(String(255), nullable=False, default="")
+    restrictions: Mapped[str] = mapped_column(String(255), nullable=False, default="")

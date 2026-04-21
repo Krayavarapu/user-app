@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 
 from app.models.user import User
 from app.schemas.user import UserCreate, UserUpdate
+from app.security import hash_password
 
 
 def get_user(db: Session, user_id: str) -> Optional[User]:
@@ -16,8 +17,11 @@ def list_users(db: Session, skip: int = 0, limit: int = 100) -> List[User]:
     return db.query(User).offset(skip).limit(limit).all()
 
 
-def create_user(db: Session, payload: UserCreate) -> User:
-    user = User(**payload.dict())
+def create_user(db: Session, payload: UserCreate, password_hash: Optional[str] = None) -> User:
+    user = User(
+        **payload.dict(),
+        password_hash=password_hash or hash_password("temporary-password"),
+    )
     db.add(user)
     db.commit()
     db.refresh(user)
