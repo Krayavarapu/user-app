@@ -3,6 +3,7 @@ from typing import Dict
 from fastapi import FastAPI
 
 from app.api.routes.auth import router as auth_router
+from app.api.routes.plan import router as plan_router
 from app.api.routes.users import router as users_router
 
 from starlette.middleware.cors import CORSMiddleware
@@ -20,6 +21,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(auth_router)
+app.include_router(plan_router)
 app.include_router(users_router)
 
 
