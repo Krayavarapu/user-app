@@ -62,6 +62,7 @@ def generate_plan_payload(user: User, payload: PlanRequestBase, is_regeneration:
         raw_generated = mock_provider.generate(user=user, payload=payload, is_regeneration=is_regeneration)
         normalized = _normalize_plan_fields(raw_generated, payload)
         notes_prefix = "Generated using fallback provider. "
+        # print(f"Error generating plan: {e}")
 
     notes = f"{notes_prefix}{normalized['notes']}".strip()
 

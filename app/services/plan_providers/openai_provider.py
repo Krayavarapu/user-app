@@ -68,7 +68,9 @@ class OpenAIPlanProvider(PlanProvider):
             },
             timeout=settings.plan_generation_timeout_seconds,
         )
+        # print(f"OpenAI response: {response.json()}")
         response.raise_for_status()
         body = response.json()
+        # print(f"OpenAI body: {body}")
         content = body["choices"][0]["message"]["content"]
         return self._extract_json(content)
