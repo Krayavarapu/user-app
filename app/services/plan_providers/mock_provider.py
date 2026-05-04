@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import logging
 from typing import Any, Dict, List
 
 from app.models.user import User
+
+logger = logging.getLogger(__name__)
 from app.schemas.plan import PlanRequestBase
 from app.services.plan_providers.base import PlanProvider
 
@@ -33,6 +36,13 @@ class MockPlanProvider(PlanProvider):
         payload: PlanRequestBase,
         is_regeneration: bool,
     ) -> Dict[str, Any]:
+        logger.debug(
+            "mock: generate user_id=%s goal=%r duration_days=%s regen=%s",
+            user.user_id,
+            payload.goal,
+            payload.duration_days,
+            is_regeneration,
+        )
         first_name = user.first_name
         days: List[Dict[str, Any]] = []
         for day_number in range(1, payload.duration_days + 1):

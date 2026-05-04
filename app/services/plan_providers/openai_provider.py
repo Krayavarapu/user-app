@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 import json
+import logging
 from typing import Any, Dict
 
 import httpx
+
+logger = logging.getLogger(__name__)
 
 from app.models.user import User
 from app.schemas.plan import PlanRequestBase
@@ -32,13 +35,15 @@ class OpenAIPlanProvider(PlanProvider):
         is_regeneration: bool,
     ) -> Dict[str, Any]:
         if not settings.openai_api_key:
+            logger.error("openai: missing OPENAI_API_KEY")
             raise RuntimeError("OPENAI_API_KEY is not configured")
 
         system_prompt = (
             "You are a fitness plan generation engine. "
             "Return only valid JSON with keys: title, summary, days, notes. "
             "days must be an array of objects: day_number, day_label, focus, exercises. "
-            "exercises must be an array of 3-6 concise strings."
+            "exercises must be an array of 3-6 concise strings (each under 12 words). "
+            "Keep wording compact to reduce output length."
         )
         user_prompt = (
             f"Generate a {payload.duration_days}-day fitness plan.\n"
@@ -68,9 +73,22 @@ class OpenAIPlanProvider(PlanProvider):
             },
             timeout=settings.plan_generation_timeout_seconds,
         )
-        # print(f"OpenAI response: {response.json()}")
+        if response.status_code >= 400:
+            logger.error(
+                "openai: HTTP %s body_snippet=%r",
+                response.status_code,
+                (response.text or "")[:2000],
+            )
         response.raise_for_status()
         body = response.json()
-        # print(f"OpenAI body: {body}")
+        usage = body.get("usage") or {}
+        logger.info(
+            "openai: ok id=%s model=%s prompt_tokens=%s completion_tokens=%s",
+            body.get("id"),
+            body.get("model"),
+            usage.get("prompt_tokens"),
+            usage.get("completion_tokens"),
+        )
         content = body["choices"][0]["message"]["content"]
+        logger.debug("openai: content_chars=%s", len(content or ""))
         return self._extract_json(content)

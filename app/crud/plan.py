@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import json
+import logging
 from datetime import datetime, timezone
 from typing import Optional
 
 from sqlalchemy.orm import Session, selectinload
+
+logger = logging.getLogger(__name__)
 
 from app.models.fitness_plan import FitnessPlan
 from app.models.plan_day import PlanDay
@@ -60,6 +63,12 @@ def create_plan(
         )
 
     db.commit()
+    logger.debug(
+        "crud.plan: created plan_id=%s user_id=%s days=%s",
+        plan.plan_id,
+        user_id,
+        len(days),
+    )
     return get_plan_by_id(db, plan.plan_id)
 
 
@@ -74,6 +83,11 @@ def archive_user_active_plans(db: Session, user_id: str) -> None:
         plan.updated_at = now
         db.add(plan)
     db.commit()
+    logger.debug(
+        "crud.plan: archived %s active plan(s) for user_id=%s",
+        len(active_plans),
+        user_id,
+    )
 
 
 def get_plan_by_id(db: Session, plan_id: str) -> Optional[FitnessPlan]:

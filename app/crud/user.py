@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import logging
 from typing import List, Optional
 
 from sqlalchemy.orm import Session
+
+logger = logging.getLogger(__name__)
 
 from app.models.user import User
 from app.schemas.user import UserCreate, UserUpdate
@@ -25,6 +28,7 @@ def create_user(db: Session, payload: UserCreate, password_hash: Optional[str] =
     db.add(user)
     db.commit()
     db.refresh(user)
+    logger.debug("crud.user: created user_id=%s", user.user_id)
     return user
 
 
@@ -35,9 +39,12 @@ def update_user(db: Session, existing: User, payload: UserUpdate) -> User:
     db.add(existing)
     db.commit()
     db.refresh(existing)
+    logger.debug("crud.user: updated user_id=%s", existing.user_id)
     return existing
 
 
 def delete_user(db: Session, existing: User) -> None:
+    uid = existing.user_id
     db.delete(existing)
     db.commit()
+    logger.debug("crud.user: deleted user_id=%s", uid)

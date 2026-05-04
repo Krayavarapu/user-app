@@ -14,11 +14,11 @@ class Settings:
 
     @property
     def plan_generation_timeout_seconds(self) -> float:
-        raw = os.getenv("PLAN_GENERATION_TIMEOUT_SECONDS", "20").strip()
+        raw = os.getenv("PLAN_GENERATION_TIMEOUT_SECONDS", "120").strip()
         try:
             return max(1.0, float(raw))
         except ValueError:
-            return 20.0
+            return 120.0
 
 
 settings = Settings()

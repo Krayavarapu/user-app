@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from datetime import date
 
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -12,6 +13,7 @@ from app.schemas.auth import LoginRequest, LoginResponse, SignupRequest, SignupR
 from app.schemas.user import UserCreate
 from app.security import generate_session_token, hash_password, verify_password
 
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -23,6 +25,7 @@ def _split_flags(value: str) -> list[str]:
 @router.post("/signup", response_model=SignupResponse, status_code=status.HTTP_201_CREATED)
 def signup_endpoint(payload: SignupRequest, db: Session = Depends(get_db)) -> SignupResponse:
     if get_user(db, payload.user_id):
+        logger.warning("auth: signup conflict user_id=%s", payload.user_id)
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail=f"User with user_id '{payload.user_id}' already exists",
@@ -39,6 +42,7 @@ def signup_endpoint(payload: SignupRequest, db: Session = Depends(get_db)) -> Si
         user_id=payload.user_id,
     )
     create_user(db, user_payload, password_hash=hash_password(payload.password))
+    logger.info("auth: signup ok user_id=%s", payload.user_id)
     return SignupResponse(user_id=payload.user_id)
 
 
@@ -46,13 +50,21 @@ def signup_endpoint(payload: SignupRequest, db: Session = Depends(get_db)) -> Si
 def login_endpoint(payload: LoginRequest, db: Session = Depends(get_db)) -> LoginResponse:
     user = get_user(db, payload.username)
     if not user or not verify_password(payload.password, user.password_hash):
+        logger.warning("auth: login failed (invalid credentials)")
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Unauthorized")
 
     holds = _split_flags(user.holds)
     restrictions = _split_flags(user.restrictions)
     if holds or restrictions:
+        logger.warning(
+            "auth: login blocked by holds/restrictions user_id=%s holds=%s restrictions=%s",
+            user.user_id,
+            holds,
+            restrictions,
+        )
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Unauthorized")
 
     session_token = generate_session_token()
     save_session(session_token, user.user_id)
+    logger.info("auth: login ok user_id=%s", user.user_id)
     return LoginResponse(session_token=session_token, user_id=user.user_id, holds=[], restrictions=[])
