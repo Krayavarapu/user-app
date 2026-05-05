@@ -21,7 +21,7 @@ This repo is **only the API**. The frontend lives in a **separate repository**; 
    - **`OPENAI_API_KEY`** — required for live plan generation
    - **`CORS_ORIGINS`** — comma-separated frontend URLs, e.g. `https://your-frontend.onrender.com` (no trailing slash). Localhost stays allowed for dev builds.
    - Optional: `OPENAI_MODEL`, `PLAN_GENERATION_TIMEOUT_SECONDS`, `LOG_LEVEL`
-3. **Deploy:** `buildCommand` installs deps; **`preDeployCommand`** runs `alembic upgrade head`; **`startCommand`** runs Uvicorn on `$PORT`.
+3. **Deploy:** `buildCommand` installs deps; **`startCommand`** runs `alembic upgrade head` then Uvicorn on `$PORT` (Render **free** tier does not support `preDeployCommand`, so migrations run on each start — safe because Alembic is idempotent).
 4. Smoke test: open `https://<your-service>.onrender.com/docs` and run signup / plan generate.
 
 **SQLite stays local:** production uses only the Render **Environment** tab — your machine keeps `.env` with SQLite.

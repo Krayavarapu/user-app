@@ -1,5 +1,7 @@
 # Render Blueprint — place this file at the root of the user-app Git repository.
-# Render will find ./render.yaml by default (New → Blueprint → connect this repo).
+#
+# Free tier: preDeployCommand is not supported, so migrations run at container start
+# (alembic upgrade head is idempotent). Set DATABASE_URL before deploy or the start will fail.
 #
 # After first deploy, set Environment variables in the dashboard:
 #   DATABASE_URL  — Neon Postgres URI (postgresql+psycopg2://...?sslmode=require)
@@ -16,6 +18,5 @@ services:
     plan: free
     region: oregon
     buildCommand: pip install -r requirements.txt
-    preDeployCommand: alembic upgrade head
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    startCommand: sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
     healthCheckPath: /health
