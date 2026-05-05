@@ -11,9 +11,9 @@ FastAPI API with SQLAlchemy. **Local:** SQLite via `.env`. **Production (Render)
 
 ## Production on Render
 
-The repo root includes `render.yaml` (Blueprint) for this service with `rootDir: user-app`.
+This directory includes [`render.yaml`](./render.yaml). The Git repo root is the **monorepo** (`fitness-app/`); the blueprint path is **`user-app/render.yaml`**.
 
-1. In [Render](https://dashboard.render.com), **New → Blueprint** (or connect the repo and apply the blueprint).
+1. In [Render](https://dashboard.render.com), **New → Blueprint**, select this repo, then set **Blueprint file path** to **`user-app/render.yaml`** (Render no longer requires `render.yaml` only at the repo root).
 2. After the web service is created, open **Environment** and add **synchronously** (never commit these):
    - **`DATABASE_URL`** — Neon URI, e.g. `postgresql+psycopg2://USER:PASS@HOST/neondb?sslmode=require`
    - **`OPENAI_API_KEY`** — required for live plan generation

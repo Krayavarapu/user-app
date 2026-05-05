@@ -1,0 +1,23 @@
+# Render Blueprint — this service only.
+# Monorepo: in Render → New Blueprint, set the blueprint file path to: user-app/render.yaml
+# (Render defaults to repo-root render.yaml; custom paths are supported.)
+#
+# After first deploy, set Environment variables in the dashboard:
+#   DATABASE_URL  — Neon Postgres URI (postgresql+psycopg2://...?sslmode=require)
+#   OPENAI_API_KEY, OPENAI_MODEL (optional), PLAN_GENERATION_TIMEOUT_SECONDS (optional)
+#   CORS_ORIGINS  — comma-separated frontend URLs, e.g. https://your-site.onrender.com
+#   LOG_LEVEL     — optional
+#
+# Local dev: use user-app/.env with SQLite; do not commit production secrets.
+
+services:
+  - type: web
+    name: fitness-user-api
+    runtime: python
+    plan: free
+    rootDir: user-app
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    preDeployCommand: alembic upgrade head
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
