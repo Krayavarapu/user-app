@@ -15,6 +15,8 @@ This repo is **only the API**. The frontend lives in a **separate repository**; 
 
 [`render.yaml`](./render.yaml) sits at the **root of this repo** — Render picks it up automatically for **New → Blueprint** (no custom path needed).
 
+**Python version:** New Render services default to **Python 3.14**, which breaks **`psycopg2-binary`** (C extension / `ImportError: undefined symbol: _PyInterpreterState_Get`). This repo pins **3.12.8** via [`.python-version`](./.python-version) and **`PYTHON_VERSION`** in `render.yaml`. See [Render: Python version](https://render.com/docs/python-version).
+
 1. In [Render](https://dashboard.render.com), **New → Blueprint** and connect **this** (`user-app`) repository.
 2. After the web service is created, open **Environment** and add **synchronously** (never commit these):
    - **`DATABASE_URL`** — Neon URI, e.g. `postgresql+psycopg2://USER:PASS@HOST/neondb?sslmode=require`

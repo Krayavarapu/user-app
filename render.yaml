@@ -3,6 +3,9 @@
 # Free tier: preDeployCommand is not supported, so migrations run at container start
 # (alembic upgrade head is idempotent). Set DATABASE_URL before deploy or the start will fail.
 #
+# Pin Python: Render's default is 3.14.x; psycopg2-binary does not support 3.14 yet.
+# .python-version + PYTHON_VERSION below force 3.12.8 (see https://render.com/docs/python-version ).
+#
 # After first deploy, set Environment variables in the dashboard:
 #   DATABASE_URL  — Neon Postgres URI (postgresql+psycopg2://...?sslmode=require)
 #   OPENAI_API_KEY, OPENAI_MODEL (optional), PLAN_GENERATION_TIMEOUT_SECONDS (optional)
@@ -17,6 +20,9 @@ services:
     runtime: python
     plan: free
     region: oregon
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
     buildCommand: pip install -r requirements.txt
     startCommand: sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
     healthCheckPath: /health
