@@ -10,6 +10,8 @@ from __future__ import annotations
 import sqlalchemy as sa
 from alembic import op
 
+from migration_support.schema_utils import table_column_names
+
 
 revision = "20260421_0003"
 down_revision = "20260420_0002"
@@ -19,7 +21,7 @@ depends_on = None
 
 def upgrade() -> None:
     connection = op.get_bind()
-    columns = {row[1] for row in connection.execute(sa.text("PRAGMA table_info(users)"))}
+    columns = table_column_names(connection, "users")
 
     # Idempotent: skip if already applied (e.g. partial run or manual schema).
     if "password_hash" in columns and "holds" in columns and "restrictions" in columns:
@@ -60,7 +62,7 @@ def upgrade() -> None:
 
 def downgrade() -> None:
     connection = op.get_bind()
-    columns = {row[1] for row in connection.execute(sa.text("PRAGMA table_info(users)"))}
+    columns = table_column_names(connection, "users")
 
     if "restrictions" in columns:
         op.drop_column("users", "restrictions")

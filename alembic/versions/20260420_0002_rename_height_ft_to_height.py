@@ -8,6 +8,8 @@ Create Date: 2026-04-20
 from alembic import op
 import sqlalchemy as sa
 
+from migration_support.schema_utils import table_column_names
+
 
 # revision identifiers, used by Alembic.
 revision = "20260420_0002"
@@ -18,7 +20,7 @@ depends_on = None
 
 def upgrade() -> None:
     connection = op.get_bind()
-    columns = {row[1] for row in connection.execute(sa.text("PRAGMA table_info(users)"))}
+    columns = table_column_names(connection, "users")
 
     # Supports both states:
     # 1) Existing DBs with height_ft column (migrate to height)
@@ -59,7 +61,7 @@ def upgrade() -> None:
 
 def downgrade() -> None:
     connection = op.get_bind()
-    columns = {row[1] for row in connection.execute(sa.text("PRAGMA table_info(users)"))}
+    columns = table_column_names(connection, "users")
 
     if "height_ft" in columns and "height" not in columns:
         return
