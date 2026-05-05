@@ -11,12 +11,22 @@ logger = logging.getLogger(__name__)
 
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./app.db")
 
-connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}
-engine = create_engine(DATABASE_URL, connect_args=connect_args)
+_is_sqlite = DATABASE_URL.startswith("sqlite")
+connect_args = {"check_same_thread": False} if _is_sqlite else {}
+_engine_kwargs: dict = {}
+if not _is_sqlite:
+    _engine_kwargs["pool_pre_ping"] = True
+
+engine = create_engine(DATABASE_URL, connect_args=connect_args, **_engine_kwargs)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-_driver = "sqlite" if DATABASE_URL.startswith("sqlite") else "other"
-logger.debug("database: engine ready driver_kind=%s echo_off=True", _driver)
+if _is_sqlite:
+    _driver = "sqlite"
+elif DATABASE_URL.lower().startswith("postgresql"):
+    _driver = "postgresql"
+else:
+    _driver = "other"
+logger.debug("database: engine ready driver_kind=%s", _driver)
 
 
 def get_db() -> Generator[Session, None, None]:

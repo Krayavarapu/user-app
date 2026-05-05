@@ -1,14 +1,14 @@
 from pathlib import Path
+import os
+from contextlib import asynccontextmanager
+from typing import Dict, List
+
+import logging
 
 from dotenv import load_dotenv
 
 _ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(_ROOT / ".env")
-
-from contextlib import asynccontextmanager
-from typing import Dict
-
-import logging
 
 from fastapi import FastAPI
 
@@ -26,6 +26,22 @@ from starlette.middleware.cors import CORSMiddleware
 logger = logging.getLogger(__name__)
 
 
+def _cors_allow_origins() -> List[str]:
+    """Local Vite defaults plus optional CORS_ORIGINS (comma-separated) for production."""
+    origins = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ]
+    raw = os.getenv("CORS_ORIGINS", "").strip()
+    if not raw:
+        return origins
+    for part in raw.split(","):
+        o = part.strip().rstrip("/")
+        if o and o not in origins:
+            origins.append(o)
+    return origins
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info("user-app: application startup")
@@ -37,10 +53,7 @@ app = FastAPI(title="user-app", version="1.0.0", lifespan=lifespan)
 app.add_middleware(RequestLoggingMiddleware)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
+    allow_origins=_cors_allow_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
