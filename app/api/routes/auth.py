@@ -2,16 +2,18 @@ from __future__ import annotations
 
 import logging
 from datetime import date
+from datetime import datetime, timedelta, timezone
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from app.auth_store import save_session
+from app.crud.session import create_session
 from app.crud.user import create_user, get_user
 from app.database import get_db
 from app.schemas.auth import LoginRequest, LoginResponse, SignupRequest, SignupResponse
 from app.schemas.user import UserCreate
 from app.security import generate_session_token, hash_password, verify_password
+from app.settings import settings
 
 logger = logging.getLogger(__name__)
 
@@ -65,6 +67,7 @@ def login_endpoint(payload: LoginRequest, db: Session = Depends(get_db)) -> Logi
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Unauthorized")
 
     session_token = generate_session_token()
-    save_session(session_token, user.user_id)
+    expires_at = datetime.now(timezone.utc) + timedelta(days=settings.session_ttl_days)
+    create_session(db, session_token, user.user_id, expires_at)
     logger.info("auth: login ok user_id=%s", user.user_id)
     return LoginResponse(session_token=session_token, user_id=user.user_id, holds=[], restrictions=[])

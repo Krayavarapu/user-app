@@ -2,11 +2,12 @@ from __future__ import annotations
 
 import logging
 
-from fastapi import Header, HTTPException, status
+from fastapi import Depends, Header, HTTPException, status
 from sqlalchemy.orm import Session
 
-from app.auth_store import get_user_id_for_token
+from app.crud.session import get_valid_user_id_for_token
 from app.crud.user import get_user
+from app.database import get_db
 from app.models.user import User
 
 logger = logging.getLogger(__name__)
@@ -18,9 +19,12 @@ def _token_prefix(token: str, n: int = 8) -> str:
     return f"{token[:n]}…" if len(token) > n else token
 
 
-def get_current_user_id(authorization: str = Header(default="")) -> str:
+def get_current_user_id(
+    authorization: str = Header(default=""),
+    db: Session = Depends(get_db),
+) -> str:
     token = authorization.replace("Bearer ", "", 1).strip()
-    user_id = get_user_id_for_token(token)
+    user_id = get_valid_user_id_for_token(db, token)
     if not token:
         logger.warning("auth: missing bearer token")
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Unauthorized")

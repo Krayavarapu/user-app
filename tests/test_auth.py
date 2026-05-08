@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from typing import Dict
 
 from app.database import get_db
 from app.main import app
+from app.models.user_session import UserSession
 from app.models.user import User
 
 def valid_signup_payload(user_id: str = "auth-001") -> Dict[str, object]:
@@ -86,3 +87,32 @@ def test_restricted_account_blocks_login(client) -> None:
     )
     assert login_res.status_code == 401
     assert login_res.json()["detail"] == "Unauthorized"
+
+
+def test_expired_session_token_returns_401(client) -> None:
+    client.post("/auth/signup", json=valid_signup_payload(user_id="auth-006"))
+    override_get_db = app.dependency_overrides[get_db]
+    db = next(override_get_db())
+    try:
+        expired_session = UserSession(
+            token="expired-token",
+            user_id="auth-006",
+            expires_at=datetime.now(timezone.utc) - timedelta(minutes=1),
+        )
+        db.add(expired_session)
+        db.commit()
+    finally:
+        db.close()
+
+    response = client.post(
+        "/plan/generate",
+        json={
+            "prompt": "Need a simple routine",
+            "goal": "Build consistency",
+            "equipment": "Bodyweight",
+            "duration_days": 3,
+        },
+        headers={"Authorization": "Bearer expired-token"},
+    )
+    assert response.status_code == 401
+    assert response.json()["detail"] == "Unauthorized"

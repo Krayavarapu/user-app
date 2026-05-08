@@ -20,5 +20,13 @@ class Settings:
         except ValueError:
             return 120.0
 
+    @property
+    def session_ttl_days(self) -> int:
+        raw = os.getenv("SESSION_TTL_DAYS", "30").strip()
+        try:
+            return max(1, int(raw))
+        except ValueError:
+            return 30
+
 
 settings = Settings()
