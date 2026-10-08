@@ -7,7 +7,8 @@ FastAPI API with SQLAlchemy. **Local:** SQLite via `.env`. **Production (Render)
 1. Install dependencies: `python3 -m pip install -r requirements.txt`
 2. Copy `.env.example` → `.env` and keep `DATABASE_URL=sqlite:///./app.db` for local testing.
 3. Run migrations: `python3 -m alembic upgrade head`
-4. Start API: `python3 -m uvicorn app.main:app --reload`
+4. Seed reference data (equipment catalog): `python3 -m app.scripts.seed_exercise_library` — idempotent, safe to re-run after editing `app/data/exercise_library/*.json`
+5. Start API: `python3 -m uvicorn app.main:app --reload`
 
 ## Production on Render
 

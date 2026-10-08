@@ -12,6 +12,7 @@ from app.database import get_db
 from app.main import app
 from app.models import user  # noqa: F401
 from app.models import user_session  # noqa: F401
+from app.models import equipment  # noqa: F401
 from app.models.base import Base
 
 
@@ -31,6 +32,20 @@ def _isolate_from_external_services(monkeypatch) -> None:
         raise AssertionError(f"network disabled in tests: {request.method} {request.url}")
 
     monkeypatch.setattr(httpx.HTTPTransport, "handle_request", _blocked)
+
+
+@pytest.fixture()
+def db_session(tmp_path) -> Generator[Session, None, None]:
+    """A SQLAlchemy session on a throwaway SQLite DB, for tests that don't need HTTP."""
+    engine = create_engine(f"sqlite:///{tmp_path / 'db_session.db'}", connect_args={"check_same_thread": False})
+    Base.metadata.create_all(bind=engine)
+    session = sessionmaker(autocommit=False, autoflush=False, bind=engine)()
+    try:
+        yield session
+    finally:
+        session.close()
+        Base.metadata.drop_all(bind=engine)
+        engine.dispose()
 
 
 @pytest.fixture()
