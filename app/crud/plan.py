@@ -72,7 +72,12 @@ def create_plan(
     return get_plan_by_id(db, plan.plan_id)
 
 
-def archive_user_active_plans(db: Session, user_id: str) -> None:
+def archive_user_active_plans(db: Session, user_id: str, *, commit: bool = True) -> None:
+    """Mark the user's active plans as archived.
+
+    With ``commit=False`` the change is only flushed, so the caller can archive the old plan and
+    create the new one in a single transaction (``create_plan`` commits).
+    """
     active_plans = db.query(FitnessPlan).filter(FitnessPlan.user_id == user_id, FitnessPlan.status == "active").all()
     if not active_plans:
         return
@@ -82,11 +87,15 @@ def archive_user_active_plans(db: Session, user_id: str) -> None:
         plan.status = "archived"
         plan.updated_at = now
         db.add(plan)
-    db.commit()
+    if commit:
+        db.commit()
+    else:
+        db.flush()
     logger.debug(
-        "crud.plan: archived %s active plan(s) for user_id=%s",
+        "crud.plan: archived %s active plan(s) for user_id=%s commit=%s",
         len(active_plans),
         user_id,
+        commit,
     )
 
 

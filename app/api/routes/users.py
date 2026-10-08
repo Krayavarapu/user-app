@@ -12,7 +12,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from app.crud.user import create_user, delete_user, get_user, list_users, update_user
 from app.database import get_db
 from app.schemas.user import UserCreate, UserRead, UserUpdate
-from app.api.deps import get_current_user_id
+from app.api.deps import get_authenticated_user, get_current_user_id
 
 
 logger = logging.getLogger(__name__)
@@ -63,8 +63,34 @@ def update_me_endpoint(
     return updated
 
 
+@router.get("/me", response_model=UserRead)
+def get_me_endpoint(
+    current_user_id: str = Depends(get_current_user_id),
+    db: Session = Depends(get_db),
+) -> UserRead:
+    return get_authenticated_user(db, current_user_id)
+
+
+def _require_self(user_id: str, current_user_id: str) -> None:
+    """Users may only act on their own record.
+
+    Another user's ID gets the same 404 as a missing one, so user IDs can't be enumerated.
+    """
+    if user_id != current_user_id:
+        logger.warning("users: cross-user access denied requested=%s current_user_id=%s", user_id, current_user_id)
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"User with user_id '{user_id}' was not found",
+        )
+
+
 @router.get("/{user_id}", response_model=UserRead)
-def get_user_endpoint(user_id: str, db: Session = Depends(get_db)) -> UserRead:
+def get_user_endpoint(
+    user_id: str,
+    current_user_id: str = Depends(get_current_user_id),
+    db: Session = Depends(get_db),
+) -> UserRead:
+    _require_self(user_id, current_user_id)
     user = get_user(db, user_id)
     if not user:
         logger.info("users: get not found user_id=%s", user_id)
@@ -76,7 +102,13 @@ def get_user_endpoint(user_id: str, db: Session = Depends(get_db)) -> UserRead:
 
 
 @router.put("/{user_id}", response_model=UserRead)
-def update_user_endpoint(user_id: str, payload: UserUpdate, db: Session = Depends(get_db)) -> UserRead:
+def update_user_endpoint(
+    user_id: str,
+    payload: UserUpdate,
+    current_user_id: str = Depends(get_current_user_id),
+    db: Session = Depends(get_db),
+) -> UserRead:
+    _require_self(user_id, current_user_id)
     existing = get_user(db, user_id)
     if not existing:
         logger.info("users: update not found user_id=%s", user_id)
@@ -90,7 +122,12 @@ def update_user_endpoint(user_id: str, payload: UserUpdate, db: Session = Depend
 
 
 @router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_user_endpoint(user_id: str, db: Session = Depends(get_db)) -> Response:
+def delete_user_endpoint(
+    user_id: str,
+    current_user_id: str = Depends(get_current_user_id),
+    db: Session = Depends(get_db),
+) -> Response:
+    _require_self(user_id, current_user_id)
     existing = get_user(db, user_id)
     if not existing:
         logger.info("users: delete not found user_id=%s", user_id)

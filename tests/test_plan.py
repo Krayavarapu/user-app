@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import pytest
+
 from app.database import get_db
 from app.main import app
 from app.models.fitness_plan import FitnessPlan
@@ -45,12 +47,17 @@ def test_generate_plan_success(client) -> None:
 
 def test_regenerate_plan_success(client) -> None:
     headers = _auth_header(client, user_id="plan-user-002")
+    first_res = client.post(
+        "/plan/generate",
+        json={"prompt": "initial", "goal": "Improve endurance", "equipment": "Bands", "duration_days": 5},
+        headers=headers,
+    )
     payload = {
         "prompt": "Need low-impact training.",
         "goal": "Improve endurance",
         "equipment": "Resistance bands only",
         "duration_days": 5,
-        "previous_plan_id": "plan-old-001",
+        "previous_plan_id": first_res.json()["plan_id"],
     }
 
     response = client.post("/plan/regenerate", json=payload, headers=headers)
@@ -201,3 +208,105 @@ def test_generate_plan_missing_api_key_uses_fallback(client, monkeypatch) -> Non
     assert response.status_code == 200
     body = response.json()
     assert "fallback provider" in (body.get("notes") or "").lower()
+
+
+def _plan_statuses(user_id: str) -> dict:
+    """Read plan statuses through a fresh session (what another request would see)."""
+    db = next(app.dependency_overrides[get_db]())
+    try:
+        plans = db.query(FitnessPlan).filter(FitnessPlan.user_id == user_id).all()
+        return {plan.plan_id: plan.status for plan in plans}
+    finally:
+        db.close()
+
+
+def _generate(client, headers, **overrides) -> dict:
+    payload = {"prompt": "p", "goal": "g", "equipment": "Dumbbells", "duration_days": 2, **overrides}
+    response = client.post("/plan/generate", json=payload, headers=headers)
+    assert response.status_code == 200
+    return response.json()
+
+
+def test_failed_generation_does_not_archive_active_plan(client, monkeypatch) -> None:
+    headers = _auth_header(client, user_id="plan-user-008")
+    first_plan_id = _generate(client, headers)["plan_id"]
+
+    def failing_generate(**kwargs):
+        raise RuntimeError("generation exploded")
+
+    monkeypatch.setattr("app.api.routes.plan.generate_plan_payload", failing_generate)
+
+    payload = {"prompt": "p", "goal": "g", "equipment": "Dumbbells", "duration_days": 2}
+    with pytest.raises(RuntimeError):
+        client.post("/plan/generate", json=payload, headers=headers)
+    with pytest.raises(RuntimeError):
+        client.post("/plan/regenerate", json={**payload, "previous_plan_id": first_plan_id}, headers=headers)
+
+    assert _plan_statuses("plan-user-008") == {first_plan_id: "active"}
+    active = client.get("/plan/active", headers=headers)
+    assert active.status_code == 200
+    assert active.json()["plan_id"] == first_plan_id
+
+
+def test_failed_plan_persistence_rolls_back_archive(client, monkeypatch) -> None:
+    headers = _auth_header(client, user_id="plan-user-009")
+    first_plan_id = _generate(client, headers)["plan_id"]
+
+    def failing_create_plan(db, **kwargs):
+        raise RuntimeError("insert failed")
+
+    monkeypatch.setattr("app.api.routes.plan.create_plan", failing_create_plan)
+
+    payload = {"prompt": "p", "goal": "g", "equipment": "Dumbbells", "duration_days": 2}
+    with pytest.raises(RuntimeError):
+        client.post("/plan/generate", json=payload, headers=headers)
+
+    assert _plan_statuses("plan-user-009") == {first_plan_id: "active"}
+
+
+def test_regenerate_unknown_previous_plan_returns_404(client) -> None:
+    headers = _auth_header(client, user_id="plan-user-010")
+    first_plan_id = _generate(client, headers)["plan_id"]
+
+    response = client.post(
+        "/plan/regenerate",
+        json={"prompt": "p", "goal": "g", "equipment": "Dumbbells", "duration_days": 2, "previous_plan_id": "plan-nope"},
+        headers=headers,
+    )
+    assert response.status_code == 404
+    assert response.json()["detail"] == "Plan not found"
+    assert _plan_statuses("plan-user-010") == {first_plan_id: "active"}
+
+
+def test_regenerate_rejects_foreign_previous_plan_id(client) -> None:
+    owner_headers = _auth_header(client, user_id="plan-user-011")
+    other_headers = _auth_header(client, user_id="plan-user-012")
+    owner_plan_id = _generate(client, owner_headers)["plan_id"]
+    other_plan_id = _generate(client, other_headers)["plan_id"]
+
+    response = client.post(
+        "/plan/regenerate",
+        json={
+            "prompt": "p",
+            "goal": "g",
+            "equipment": "Dumbbells",
+            "duration_days": 2,
+            "previous_plan_id": owner_plan_id,
+        },
+        headers=other_headers,
+    )
+    # Same response as a missing plan, so plan IDs can't be probed.
+    assert response.status_code == 404
+    assert response.json()["detail"] == "Plan not found"
+    assert _plan_statuses("plan-user-011") == {owner_plan_id: "active"}
+    assert _plan_statuses("plan-user-012") == {other_plan_id: "active"}
+
+
+def test_regenerate_without_previous_plan_id_still_works(client) -> None:
+    headers = _auth_header(client, user_id="plan-user-013")
+    response = client.post(
+        "/plan/regenerate",
+        json={"prompt": "p", "goal": "g", "equipment": "Dumbbells", "duration_days": 2},
+        headers=headers,
+    )
+    assert response.status_code == 200

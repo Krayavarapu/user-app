@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections.abc import Generator
 
+import httpx
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
@@ -12,6 +13,24 @@ from app.main import app
 from app.models import user  # noqa: F401
 from app.models import user_session  # noqa: F401
 from app.models.base import Base
+
+
+@pytest.fixture(autouse=True)
+def _isolate_from_external_services(monkeypatch) -> None:
+    """Keep every test offline and independent of the developer's local .env.
+
+    app.main loads .env at import time, so a real OPENAI_API_KEY could otherwise be picked
+    up by tests. Real network I/O is blocked at the httpx transport layer. FastAPI's
+    TestClient uses its own in-process transport, and tests that need to exercise an HTTP
+    provider can inject httpx.MockTransport, so neither is affected.
+    """
+    for name in ("OPENAI_API_KEY", "ANTHROPIC_API_KEY"):
+        monkeypatch.delenv(name, raising=False)
+
+    def _blocked(self, request):  # noqa: ANN001
+        raise AssertionError(f"network disabled in tests: {request.method} {request.url}")
+
+    monkeypatch.setattr(httpx.HTTPTransport, "handle_request", _blocked)
 
 
 @pytest.fixture()

@@ -22,6 +22,19 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/plan", tags=["plan"])
 
 
+def _replace_active_plan(db: Session, user_id: str, generated: dict):
+    """Archive the current active plan and persist the new one in a single transaction.
+
+    Generation must already have succeeded: if it fails, the user keeps their active plan.
+    """
+    try:
+        archive_user_active_plans(db, user_id, commit=False)
+        return create_plan(db, user_id=user_id, **generated)
+    except Exception:
+        db.rollback()
+        raise
+
+
 @router.post("/generate", response_model=PlanResponse)
 def generate_plan_endpoint(
     payload: PlanGenerateRequest,
@@ -29,9 +42,8 @@ def generate_plan_endpoint(
     db: Session = Depends(get_db),
 ) -> PlanResponse:
     user = get_authenticated_user(db, current_user_id)
-    archive_user_active_plans(db, user.user_id)
     generated = generate_plan_payload(user=user, payload=payload)
-    plan = create_plan(db, user_id=user.user_id, **generated)
+    plan = _replace_active_plan(db, user.user_id, generated)
     logger.info(
         "plan: generate ok plan_id=%s user_id=%s provider=%s",
         plan.plan_id,
@@ -48,9 +60,18 @@ def regenerate_plan_endpoint(
     db: Session = Depends(get_db),
 ) -> PlanResponse:
     user = get_authenticated_user(db, current_user_id)
-    archive_user_active_plans(db, user.user_id)
+    if payload.previous_plan_id:
+        previous = get_plan_by_id(db, payload.previous_plan_id)
+        # Same response for "missing" and "someone else's" so plan IDs can't be probed.
+        if not previous or previous.user_id != user.user_id:
+            logger.info(
+                "plan: regenerate rejected unknown previous_plan_id=%s user_id=%s",
+                payload.previous_plan_id,
+                user.user_id,
+            )
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Plan not found")
     generated = generate_plan_payload(user=user, payload=payload, is_regeneration=True)
-    plan = create_plan(db, user_id=user.user_id, **generated)
+    plan = _replace_active_plan(db, user.user_id, generated)
     logger.info(
         "plan: regenerate ok plan_id=%s user_id=%s provider=%s",
         plan.plan_id,
