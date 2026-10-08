@@ -3,5 +3,15 @@ from app.models.user_session import UserSession
 from app.models.fitness_plan import FitnessPlan
 from app.models.plan_day import PlanDay
 from app.models.equipment import Equipment, UserEquipment
+from app.models.exercise import ExerciseDefinition, ExerciseEquipmentOption
 
-__all__ = ["User", "UserSession", "FitnessPlan", "PlanDay", "Equipment", "UserEquipment"]
+__all__ = [
+    "User",
+    "UserSession",
+    "FitnessPlan",
+    "PlanDay",
+    "Equipment",
+    "UserEquipment",
+    "ExerciseDefinition",
+    "ExerciseEquipmentOption",
+]

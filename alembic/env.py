@@ -11,7 +11,7 @@ from app.models import user  # noqa: F401
 from app.models import user_session  # noqa: F401
 from app.models import fitness_plan  # noqa: F401
 from app.models import plan_day  # noqa: F401
-from app.models import equipment  # noqa: F401
+from app.models import equipment, exercise  # noqa: F401
 
 
 config = context.config

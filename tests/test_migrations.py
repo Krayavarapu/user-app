@@ -11,10 +11,14 @@ from sqlalchemy import create_engine, inspect
 
 from app.models.base import Base
 from app.models.equipment import Equipment, UserEquipment
+from app.models.exercise import ExerciseDefinition, ExerciseEquipmentOption
 
 ROOT = Path(__file__).resolve().parents[1]
 PREVIOUS_REVISION = "20260508_0006"
 EQUIPMENT_REVISION = "20261007_0007"
+LIBRARY_REVISION = "20261008_0008"  # head
+EQUIPMENT_TABLES = {"equipment", "user_equipment"}
+LIBRARY_TABLES = {"exercise_definitions", "exercise_equipment_options"}
 
 
 class MigrationDb:
@@ -57,12 +61,14 @@ def migration_db(tmp_path) -> MigrationDb:
     return MigrationDb(tmp_path / "migrations.db")
 
 
-def test_upgrade_head_creates_equipment_tables(migration_db) -> None:
+def test_upgrade_head_creates_equipment_and_library_tables(migration_db) -> None:
     migration_db.alembic("upgrade", "head")
 
-    assert {"equipment", "user_equipment"} <= migration_db.tables()
+    assert EQUIPMENT_TABLES | LIBRARY_TABLES <= migration_db.tables()
     assert "ix_user_equipment_user_id" in migration_db.indexes("user_equipment")
-    assert f"{EQUIPMENT_REVISION} (head)" in migration_db.current()
+    assert "ix_exercise_definitions_movement_pattern" in migration_db.indexes("exercise_definitions")
+    assert "ix_exercise_equipment_options_equipment_id" in migration_db.indexes("exercise_equipment_options")
+    assert f"{LIBRARY_REVISION} (head)" in migration_db.current()
 
 
 def test_upgrade_head_twice_is_a_no_op(migration_db) -> None:
@@ -72,13 +78,25 @@ def test_upgrade_head_twice_is_a_no_op(migration_db) -> None:
     assert migration_db.tables() == tables_after_first
 
 
-def test_downgrade_removes_only_the_equipment_tables_and_can_reapply(migration_db) -> None:
+def test_downgrade_one_step_removes_only_the_library_tables(migration_db) -> None:
+    migration_db.alembic("upgrade", "head")
+    before = migration_db.tables()
+
+    migration_db.alembic("downgrade", EQUIPMENT_REVISION)
+    assert before - migration_db.tables() == LIBRARY_TABLES
+    assert EQUIPMENT_TABLES <= migration_db.tables()
+
+    migration_db.alembic("upgrade", "head")
+    assert migration_db.tables() == before
+
+
+def test_downgrade_removes_only_the_new_tables_and_can_reapply(migration_db) -> None:
     migration_db.alembic("upgrade", "head")
     before = migration_db.tables()
 
     migration_db.alembic("downgrade", PREVIOUS_REVISION)
     after = migration_db.tables()
-    assert before - after == {"equipment", "user_equipment"}
+    assert before - after == EQUIPMENT_TABLES | LIBRARY_TABLES
     assert {"users", "user_sessions", "fitness_plans", "plan_days"} <= after
 
     migration_db.alembic("upgrade", "head")
@@ -97,7 +115,23 @@ def test_upgrade_tolerates_tables_that_already_exist(migration_db) -> None:
     assert {"equipment", "user_equipment"} <= migration_db.tables()
 
     migration_db.alembic("upgrade", "head")
-    assert f"{EQUIPMENT_REVISION} (head)" in migration_db.current()
+    assert f"{LIBRARY_REVISION} (head)" in migration_db.current()
+
+
+def test_upgrade_tolerates_library_tables_that_already_exist(migration_db) -> None:
+    migration_db.alembic("upgrade", EQUIPMENT_REVISION)
+
+    engine = create_engine(migration_db.url)
+    try:
+        Base.metadata.create_all(
+            bind=engine, tables=[ExerciseDefinition.__table__, ExerciseEquipmentOption.__table__]
+        )
+    finally:
+        engine.dispose()
+
+    migration_db.alembic("upgrade", "head")
+    assert f"{LIBRARY_REVISION} (head)" in migration_db.current()
+    assert "ix_exercise_definitions_movement_pattern" in migration_db.indexes("exercise_definitions")
 
 
 def test_migrated_schema_matches_models(migration_db) -> None:
@@ -106,7 +140,7 @@ def test_migrated_schema_matches_models(migration_db) -> None:
     engine = create_engine(migration_db.url)
     try:
         inspector = inspect(engine)
-        for model in (Equipment, UserEquipment):
+        for model in (Equipment, UserEquipment, ExerciseDefinition, ExerciseEquipmentOption):
             table = model.__table__
             migrated_columns = {col["name"]: col for col in inspector.get_columns(table.name)}
             assert set(migrated_columns) == {col.name for col in table.columns}, table.name

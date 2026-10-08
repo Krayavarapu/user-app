@@ -13,6 +13,7 @@ from app.main import app
 from app.models import user  # noqa: F401
 from app.models import user_session  # noqa: F401
 from app.models import equipment  # noqa: F401
+from app.models import exercise  # noqa: F401
 from app.models.base import Base
 
 
@@ -32,6 +33,16 @@ def _isolate_from_external_services(monkeypatch) -> None:
         raise AssertionError(f"network disabled in tests: {request.method} {request.url}")
 
     monkeypatch.setattr(httpx.HTTPTransport, "handle_request", _blocked)
+
+
+@pytest.fixture(autouse=True)
+def _fresh_exercise_library_cache() -> Generator[None, None, None]:
+    """The library snapshot is cached per database URL; never let it leak between tests."""
+    from app.services.exercise_library.repository import clear_library_cache
+
+    clear_library_cache()
+    yield
+    clear_library_cache()
 
 
 @pytest.fixture()

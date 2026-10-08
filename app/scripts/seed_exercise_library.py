@@ -1,9 +1,9 @@
-"""Seed the exercise library reference data.
+"""Seed the exercise library reference data (equipment catalog and exercises).
 
     python -m app.scripts.seed_exercise_library
 
 Idempotent: safe to run on every deploy. Requires the schema to be migrated first
-(``alembic upgrade head``). Currently seeds the equipment catalog; exercises are added later.
+(``alembic upgrade head``). Exits non-zero, before touching the database, if a seed file is invalid.
 """
 
 from __future__ import annotations
@@ -23,21 +23,22 @@ def main() -> int:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 
     from app.database import SessionLocal
-    from app.services.exercise_library.seed import SeedValidationError, seed_equipment
+    from app.services.exercise_library.exercise_seed import seed_library
+    from app.services.exercise_library.seed import SeedValidationError
 
     db = SessionLocal()
     try:
-        result = seed_equipment(db)
+        result = seed_library(db)
     except SeedValidationError as exc:
         logging.getLogger(__name__).error("%s", exc)
         return 1
     finally:
         db.close()
 
-    print(
-        "equipment: created={0.created} updated={0.updated} reactivated={0.reactivated} "
-        "deactivated={0.deactivated} unchanged={0.unchanged}".format(result)
-    )
+    template = "{0}: created={1.created} updated={1.updated} reactivated={1.reactivated} " \
+        "deactivated={1.deactivated} unchanged={1.unchanged}"
+    print(template.format("equipment", result.equipment))
+    print(template.format("exercises", result.exercises))
     return 0
 
 

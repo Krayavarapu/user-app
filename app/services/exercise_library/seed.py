@@ -37,7 +37,7 @@ _SLUG = r"^[a-z][a-z0-9_]*$"
 
 class SeedValidationError(ValueError):
     def __init__(self, issues: List[str]) -> None:
-        super().__init__("Invalid equipment seed file:\n- " + "\n- ".join(issues))
+        super().__init__("Invalid exercise library seed file:\n- " + "\n- ".join(issues))
         self.issues = issues
 
 

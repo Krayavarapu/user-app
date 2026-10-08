@@ -1,0 +1,7525 @@
+{
+  "library_version": "lib-v1",
+  "sources": [
+    {
+      "name": "free-exercise-db",
+      "url": "https://github.com/yuhonas/free-exercise-db",
+      "commit": "f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5",
+      "license": "Unlicense (public domain)",
+      "dataset_sha256": "5bb747e3fc658f095a60dcbf6d53c96627acdcc6ffb6fffde86f7e26995d40bf",
+      "used": "facts only: names, muscles, difficulty level, equipment. Instruction text and images are not used."
+    },
+    {
+      "name": "in_house",
+      "license": "proprietary",
+      "used": "authored for coverage gaps"
+    }
+  ],
+  "exercises": [
+    {
+      "exercise_id": "bodyweight_squat",
+      "name": "Bodyweight Squat",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Bodyweight_Squat"
+      }
+    },
+    {
+      "exercise_id": "wall_sit",
+      "name": "Wall Sit",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "glutes"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "bodyweight_sumo_squat",
+      "name": "Bodyweight Sumo Squat",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads",
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "adductors"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "hip:end_range"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "dumbbell_squat",
+      "name": "Dumbbell Squat",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings",
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "hip:deep_flexion_loaded",
+        "knee:deep_flexion_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Squat"
+      }
+    },
+    {
+      "exercise_id": "goblet_squat",
+      "name": "Goblet Squat",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ],
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [
+        "hip:deep_flexion_loaded",
+        "knee:deep_flexion_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Goblet_Squat"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_plie_squat",
+      "name": "Dumbbell Plie Squat",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "abs",
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "hip:deep_flexion_loaded",
+        "hip:end_range",
+        "knee:deep_flexion_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Plie_Dumbbell_Squat"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_box_squat",
+      "name": "Dumbbell Box Squat",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings",
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ],
+        [
+          "dumbbell",
+          "flat_bench"
+        ],
+        [
+          "dumbbell",
+          "plyo_box"
+        ]
+      ],
+      "contraindications": [
+        "hip:deep_flexion_loaded",
+        "knee:deep_flexion_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Squat_To_A_Bench"
+      }
+    },
+    {
+      "exercise_id": "double_kettlebell_front_squat",
+      "name": "Double Kettlebell Front Squat",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes"
+      ],
+      "equipment_options": [
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [
+        "hip:deep_flexion_loaded",
+        "knee:deep_flexion_loaded",
+        "wrist:loaded_extension"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Front_Squats_With_Two_Kettlebells"
+      }
+    },
+    {
+      "exercise_id": "barbell_back_squat",
+      "name": "Barbell Back Squat",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings",
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "barbell",
+          "squat_rack"
+        ]
+      ],
+      "contraindications": [
+        "hip:deep_flexion_loaded",
+        "knee:deep_flexion_loaded",
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Barbell_Squat"
+      }
+    },
+    {
+      "exercise_id": "barbell_front_squat",
+      "name": "Barbell Front Squat",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 3,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "barbell",
+          "squat_rack"
+        ]
+      ],
+      "contraindications": [
+        "hip:deep_flexion_loaded",
+        "knee:deep_flexion_loaded",
+        "spine:axial_loading_heavy",
+        "wrist:loaded_extension"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Front_Barbell_Squat"
+      }
+    },
+    {
+      "exercise_id": "smith_machine_squat",
+      "name": "Smith Machine Squat",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings",
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "smith_machine"
+        ]
+      ],
+      "contraindications": [
+        "hip:deep_flexion_loaded",
+        "knee:deep_flexion_loaded",
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Smith_Machine_Squat"
+      }
+    },
+    {
+      "exercise_id": "leg_press",
+      "name": "Leg Press",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "leg_press_machine"
+        ]
+      ],
+      "contraindications": [
+        "hip:deep_flexion_loaded",
+        "knee:deep_flexion_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Leg_Press"
+      }
+    },
+    {
+      "exercise_id": "banded_squat",
+      "name": "Banded Squat",
+      "movement_pattern": "squat",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings",
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Squats_-_With_Bands"
+      }
+    },
+    {
+      "exercise_id": "barbell_deadlift",
+      "name": "Barbell Deadlift",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "lower_back"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "forearms",
+        "glutes",
+        "hamstrings",
+        "lats",
+        "mid_back",
+        "quads",
+        "traps"
+      ],
+      "equipment_options": [
+        [
+          "barbell"
+        ]
+      ],
+      "contraindications": [
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Barbell_Deadlift"
+      }
+    },
+    {
+      "exercise_id": "barbell_romanian_deadlift",
+      "name": "Barbell Romanian Deadlift",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "barbell"
+        ]
+      ],
+      "contraindications": [
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Romanian_Deadlift"
+      }
+    },
+    {
+      "exercise_id": "barbell_sumo_deadlift",
+      "name": "Barbell Sumo Deadlift",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "adductors",
+        "forearms",
+        "glutes",
+        "lower_back",
+        "mid_back",
+        "quads",
+        "traps"
+      ],
+      "equipment_options": [
+        [
+          "barbell"
+        ]
+      ],
+      "contraindications": [
+        "hip:end_range",
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Sumo_Deadlift"
+      }
+    },
+    {
+      "exercise_id": "barbell_good_morning",
+      "name": "Barbell Good Morning",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 3,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "abs",
+        "glutes",
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "barbell",
+          "squat_rack"
+        ]
+      ],
+      "contraindications": [
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Good_Morning"
+      }
+    },
+    {
+      "exercise_id": "barbell_rack_pull",
+      "name": "Barbell Rack Pull",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "lower_back"
+      ],
+      "secondary_muscles": [
+        "forearms",
+        "glutes",
+        "hamstrings",
+        "traps"
+      ],
+      "equipment_options": [
+        [
+          "barbell",
+          "squat_rack"
+        ]
+      ],
+      "contraindications": [
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Rack_Pulls"
+      }
+    },
+    {
+      "exercise_id": "barbell_hip_thrust",
+      "name": "Barbell Hip Thrust",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "barbell"
+        ],
+        [
+          "barbell",
+          "flat_bench"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Barbell_Hip_Thrust"
+      }
+    },
+    {
+      "exercise_id": "barbell_glute_bridge",
+      "name": "Barbell Glute Bridge",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "barbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Barbell_Glute_Bridge"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_stiff_leg_deadlift",
+      "name": "Dumbbell Stiff-Leg Deadlift",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "glutes",
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Stiff-Legged_Dumbbell_Deadlift"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_romanian_deadlift",
+      "name": "Dumbbell Romanian Deadlift",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "hamstrings",
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "dumbbell_single_leg_romanian_deadlift",
+      "name": "Dumbbell Single-Leg Romanian Deadlift",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "hamstrings",
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "ankle:single_leg_balance"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "dumbbell_glute_bridge",
+      "name": "Dumbbell Glute Bridge",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "dumbbell_hip_thrust",
+      "name": "Dumbbell Hip Thrust",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ],
+        [
+          "dumbbell",
+          "flat_bench"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "kettlebell_swing",
+      "name": "Kettlebell Swing",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "glutes",
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "lower_back",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ],
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "one_arm_kettlebell_swing",
+      "name": "One-Arm Kettlebell Swing",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "lower_back",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "One-Arm_Kettlebell_Swings"
+      }
+    },
+    {
+      "exercise_id": "kettlebell_single_leg_deadlift",
+      "name": "Kettlebell Single-Leg Deadlift",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "glutes",
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [
+        "ankle:single_leg_balance"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Kettlebell_One-Legged_Deadlift"
+      }
+    },
+    {
+      "exercise_id": "glute_bridge",
+      "name": "Glute Bridge",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Butt_Lift_Bridge"
+      }
+    },
+    {
+      "exercise_id": "single_leg_glute_bridge",
+      "name": "Single-Leg Glute Bridge",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Single_Leg_Glute_Bridge"
+      }
+    },
+    {
+      "exercise_id": "bodyweight_good_morning",
+      "name": "Bodyweight Good Morning",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "hamstrings",
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "lower_back"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "floor_back_extension",
+      "name": "Floor Back Extension",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lower_back"
+      ],
+      "secondary_muscles": [
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Hyperextensions_With_No_Hyperextension_Bench"
+      }
+    },
+    {
+      "exercise_id": "banded_good_morning",
+      "name": "Banded Good Morning",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "glutes",
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Band_Good_Morning"
+      }
+    },
+    {
+      "exercise_id": "cable_pull_through",
+      "name": "Cable Pull-Through",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "hamstrings",
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Pull_Through"
+      }
+    },
+    {
+      "exercise_id": "cable_deadlift",
+      "name": "Cable Deadlift",
+      "movement_pattern": "hinge",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "forearms",
+        "glutes",
+        "hamstrings",
+        "lower_back"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3110",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Cable_Deadlifts"
+      }
+    },
+    {
+      "exercise_id": "bodyweight_reverse_lunge",
+      "name": "Bodyweight Reverse Lunge",
+      "movement_pattern": "lunge",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads",
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "ankle:single_leg_balance"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "bodyweight_split_squat",
+      "name": "Bodyweight Split Squat",
+      "movement_pattern": "lunge",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads",
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "ankle:single_leg_balance"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "bodyweight_lateral_lunge",
+      "name": "Bodyweight Lateral Lunge",
+      "movement_pattern": "lunge",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads",
+        "glutes",
+        "adductors"
+      ],
+      "secondary_muscles": [
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "ankle:single_leg_balance",
+        "hip:end_range",
+        "knee:pivoting"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "bodyweight_walking_lunge",
+      "name": "Bodyweight Walking Lunge",
+      "movement_pattern": "lunge",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "ankle:single_leg_balance"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Bodyweight_Walking_Lunge"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_lunge",
+      "name": "Dumbbell Lunge",
+      "movement_pattern": "lunge",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "ankle:single_leg_balance",
+        "knee:deep_flexion_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Lunges"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_reverse_lunge",
+      "name": "Dumbbell Reverse Lunge",
+      "movement_pattern": "lunge",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "ankle:single_leg_balance",
+        "knee:deep_flexion_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Rear_Lunge"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_split_squat",
+      "name": "Dumbbell Split Squat",
+      "movement_pattern": "lunge",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "ankle:single_leg_balance",
+        "knee:deep_flexion_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Split_Squat_with_Dumbbells"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_step_up",
+      "name": "Dumbbell Step-Up",
+      "movement_pattern": "lunge",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ],
+        [
+          "dumbbell",
+          "flat_bench"
+        ],
+        [
+          "dumbbell",
+          "plyo_box"
+        ]
+      ],
+      "contraindications": [
+        "ankle:single_leg_balance",
+        "knee:deep_flexion_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Step_Ups"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_bulgarian_split_squat",
+      "name": "Dumbbell Bulgarian Split Squat",
+      "movement_pattern": "lunge",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "quads",
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ],
+        [
+          "dumbbell",
+          "flat_bench"
+        ],
+        [
+          "dumbbell",
+          "plyo_box"
+        ]
+      ],
+      "contraindications": [
+        "ankle:single_leg_balance",
+        "knee:deep_flexion_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "barbell_lunge",
+      "name": "Barbell Lunge",
+      "movement_pattern": "lunge",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "barbell",
+          "squat_rack"
+        ]
+      ],
+      "contraindications": [
+        "ankle:single_leg_balance",
+        "knee:deep_flexion_loaded",
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Barbell_Lunge"
+      }
+    },
+    {
+      "exercise_id": "barbell_walking_lunge",
+      "name": "Barbell Walking Lunge",
+      "movement_pattern": "lunge",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "barbell",
+          "squat_rack"
+        ]
+      ],
+      "contraindications": [
+        "ankle:single_leg_balance",
+        "knee:deep_flexion_loaded",
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Barbell_Walking_Lunge"
+      }
+    },
+    {
+      "exercise_id": "smith_machine_split_squat",
+      "name": "Smith Machine Split Squat",
+      "movement_pattern": "lunge",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "smith_machine"
+        ]
+      ],
+      "contraindications": [
+        "ankle:single_leg_balance",
+        "knee:deep_flexion_loaded",
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Smith_Single-Leg_Split_Squat"
+      }
+    },
+    {
+      "exercise_id": "push_up",
+      "name": "Push-Up",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Pushups"
+      }
+    },
+    {
+      "exercise_id": "incline_push_up",
+      "name": "Incline Push-Up",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Incline_Push-Up"
+      }
+    },
+    {
+      "exercise_id": "close_grip_push_up",
+      "name": "Close-Grip Push-Up",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "triceps"
+      ],
+      "secondary_muscles": [
+        "chest",
+        "delts"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Push-Ups_-_Close_Triceps_Position"
+      }
+    },
+    {
+      "exercise_id": "wide_grip_push_up",
+      "name": "Wide-Grip Push-Up",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "abs",
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Push-Up_Wide"
+      }
+    },
+    {
+      "exercise_id": "decline_push_up",
+      "name": "Decline Push-Up",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Decline_Push-Up"
+      }
+    },
+    {
+      "exercise_id": "single_arm_push_up",
+      "name": "Single-Arm Push-Up",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 3,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Single-Arm_Push-Up"
+      }
+    },
+    {
+      "exercise_id": "push_up_to_side_plank",
+      "name": "Push-Up to Side Plank",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "abs",
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Push_Up_to_Side_Plank"
+      }
+    },
+    {
+      "exercise_id": "bench_dip",
+      "name": "Bench Dip",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "triceps"
+      ],
+      "secondary_muscles": [
+        "chest",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench"
+        ],
+        [
+          "flat_bench"
+        ],
+        [
+          "plyo_box"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:dip",
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Bench_Dips"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_bench_press",
+      "name": "Dumbbell Bench Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ],
+        [
+          "dumbbell",
+          "flat_bench"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Bench_Press"
+      }
+    },
+    {
+      "exercise_id": "incline_dumbbell_press",
+      "name": "Incline Dumbbell Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Incline_Dumbbell_Press"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_floor_press",
+      "name": "Dumbbell Floor Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "triceps"
+      ],
+      "secondary_muscles": [
+        "chest",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Floor_Press"
+      }
+    },
+    {
+      "exercise_id": "one_arm_dumbbell_bench_press",
+      "name": "One-Arm Dumbbell Bench Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ],
+        [
+          "dumbbell",
+          "flat_bench"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "One_Arm_Dumbbell_Bench_Press"
+      }
+    },
+    {
+      "exercise_id": "barbell_bench_press",
+      "name": "Barbell Bench Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "barbell",
+          "squat_rack"
+        ],
+        [
+          "barbell",
+          "flat_bench",
+          "squat_rack"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Barbell_Bench_Press_-_Medium_Grip"
+      }
+    },
+    {
+      "exercise_id": "barbell_incline_bench_press",
+      "name": "Barbell Incline Bench Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "barbell",
+          "squat_rack"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Barbell_Incline_Bench_Press_-_Medium_Grip"
+      }
+    },
+    {
+      "exercise_id": "close_grip_barbell_bench_press",
+      "name": "Close-Grip Barbell Bench Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "triceps"
+      ],
+      "secondary_muscles": [
+        "chest",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "barbell",
+          "squat_rack"
+        ],
+        [
+          "barbell",
+          "flat_bench",
+          "squat_rack"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Close-Grip_Barbell_Bench_Press"
+      }
+    },
+    {
+      "exercise_id": "barbell_floor_press",
+      "name": "Barbell Floor Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "triceps"
+      ],
+      "secondary_muscles": [
+        "chest",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "barbell",
+          "squat_rack"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Floor_Press"
+      }
+    },
+    {
+      "exercise_id": "machine_chest_press",
+      "name": "Machine Chest Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "chest_press_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Machine_Bench_Press"
+      }
+    },
+    {
+      "exercise_id": "smith_machine_bench_press",
+      "name": "Smith Machine Bench Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "smith_machine"
+        ],
+        [
+          "flat_bench",
+          "smith_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Smith_Machine_Bench_Press"
+      }
+    },
+    {
+      "exercise_id": "cable_chest_press",
+      "name": "Cable Chest Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Cable_Chest_Press"
+      }
+    },
+    {
+      "exercise_id": "incline_cable_chest_press",
+      "name": "Incline Cable Chest Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Incline_Cable_Chest_Press"
+      }
+    },
+    {
+      "exercise_id": "banded_chest_press",
+      "name": "Banded Chest Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Bench_Press_-_With_Bands"
+      }
+    },
+    {
+      "exercise_id": "kettlebell_alternating_floor_press",
+      "name": "Kettlebell Alternating Floor Press",
+      "movement_pattern": "horizontal_push",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "abs",
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Alternating_Floor_Press"
+      }
+    },
+    {
+      "exercise_id": "barbell_standing_overhead_press",
+      "name": "Barbell Standing Overhead Press",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "barbell",
+          "squat_rack"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_heavy",
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Standing_Military_Press"
+      }
+    },
+    {
+      "exercise_id": "barbell_seated_overhead_press",
+      "name": "Barbell Seated Overhead Press",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "barbell",
+          "squat_rack"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_heavy",
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Seated_Barbell_Military_Press"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_shoulder_press",
+      "name": "Dumbbell Shoulder Press",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Shoulder_Press"
+      }
+    },
+    {
+      "exercise_id": "arnold_press",
+      "name": "Arnold Press",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Arnold_Dumbbell_Press"
+      }
+    },
+    {
+      "exercise_id": "seated_dumbbell_shoulder_press",
+      "name": "Seated Dumbbell Shoulder Press",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Seated_Dumbbell_Press"
+      }
+    },
+    {
+      "exercise_id": "one_arm_dumbbell_shoulder_press",
+      "name": "One-Arm Dumbbell Shoulder Press",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_One-Arm_Shoulder_Press"
+      }
+    },
+    {
+      "exercise_id": "kettlebell_alternating_press",
+      "name": "Kettlebell Alternating Press",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Alternating_Kettlebell_Press"
+      }
+    },
+    {
+      "exercise_id": "double_kettlebell_press",
+      "name": "Double Kettlebell Press",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Two-Arm_Kettlebell_Military_Press"
+      }
+    },
+    {
+      "exercise_id": "smith_machine_shoulder_press",
+      "name": "Smith Machine Shoulder Press",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "smith_machine"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_heavy",
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Smith_Machine_Overhead_Shoulder_Press"
+      }
+    },
+    {
+      "exercise_id": "cable_shoulder_press",
+      "name": "Cable Shoulder Press",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Cable_Shoulder_Press"
+      }
+    },
+    {
+      "exercise_id": "banded_shoulder_press",
+      "name": "Banded Shoulder Press",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Shoulder_Press_-_With_Bands"
+      }
+    },
+    {
+      "exercise_id": "handstand_push_up",
+      "name": "Handstand Push-Up",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 3,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "shoulder:overhead_loaded",
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Handstand_Push-Ups"
+      }
+    },
+    {
+      "exercise_id": "pike_push_up",
+      "name": "Pike Push-Up",
+      "movement_pattern": "vertical_push",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "delts",
+        "triceps"
+      ],
+      "secondary_muscles": [
+        "chest"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "shoulder:overhead_loaded",
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2010",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "barbell_bent_over_row",
+      "name": "Barbell Bent-Over Row",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "lats",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "barbell"
+        ]
+      ],
+      "contraindications": [
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Bent_Over_Barbell_Row"
+      }
+    },
+    {
+      "exercise_id": "t_bar_row",
+      "name": "T-Bar Row",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "lats"
+      ],
+      "equipment_options": [
+        [
+          "barbell"
+        ]
+      ],
+      "contraindications": [
+        "spine:axial_loading_heavy"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "T-Bar_Row_with_Handle"
+      }
+    },
+    {
+      "exercise_id": "one_arm_dumbbell_row",
+      "name": "One-Arm Dumbbell Row",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "lats",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "One-Arm_Dumbbell_Row"
+      }
+    },
+    {
+      "exercise_id": "bent_over_dumbbell_row",
+      "name": "Bent-Over Dumbbell Row",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "lats",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Bent_Over_Two-Dumbbell_Row"
+      }
+    },
+    {
+      "exercise_id": "chest_supported_dumbbell_row",
+      "name": "Chest-Supported Dumbbell Row",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "forearms",
+        "lats",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Incline_Row"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_renegade_row",
+      "name": "Dumbbell Renegade Row",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 3,
+      "primary_muscles": [
+        "lats",
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "abs",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "one_arm_kettlebell_row",
+      "name": "One-Arm Kettlebell Row",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "lats"
+      ],
+      "equipment_options": [
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "One-Arm_Kettlebell_Row"
+      }
+    },
+    {
+      "exercise_id": "seated_cable_row",
+      "name": "Seated Cable Row",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "lats",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Seated_Cable_Rows"
+      }
+    },
+    {
+      "exercise_id": "one_arm_seated_cable_row",
+      "name": "One-Arm Seated Cable Row",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "lats",
+        "traps"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Seated_One-arm_Cable_Pulley_Rows"
+      }
+    },
+    {
+      "exercise_id": "cable_face_pull",
+      "name": "Cable Face Pull",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "mid_back"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Face_Pull"
+      }
+    },
+    {
+      "exercise_id": "machine_row",
+      "name": "Machine Row",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "mid_back"
+      ],
+      "equipment_options": [
+        [
+          "seated_row_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Leverage_Iso_Row"
+      }
+    },
+    {
+      "exercise_id": "suspension_trainer_row",
+      "name": "Suspension Trainer Row",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "lats"
+      ],
+      "equipment_options": [
+        [
+          "suspension_trainer"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Suspended_Row"
+      }
+    },
+    {
+      "exercise_id": "band_pull_apart",
+      "name": "Band Pull-Apart",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "mid_back",
+        "traps"
+      ],
+      "equipment_options": [
+        [
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Band_Pull_Apart"
+      }
+    },
+    {
+      "exercise_id": "banded_row",
+      "name": "Banded Row",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lats",
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "biceps"
+      ],
+      "equipment_options": [
+        [
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "prone_t_raise",
+      "name": "Prone T Raise",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "rear_delts",
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "traps"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "prone_w_raise",
+      "name": "Prone W Raise",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "rear_delts",
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "traps"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "reverse_snow_angel",
+      "name": "Reverse Snow Angel",
+      "movement_pattern": "horizontal_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "rear_delts",
+        "upper_back"
+      ],
+      "secondary_muscles": [
+        "traps"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "pull_up",
+      "name": "Pull-Up",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "mid_back"
+      ],
+      "equipment_options": [
+        [
+          "pull_up_bar"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Pullups"
+      }
+    },
+    {
+      "exercise_id": "chin_up",
+      "name": "Chin-Up",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "forearms",
+        "mid_back"
+      ],
+      "equipment_options": [
+        [
+          "pull_up_bar"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Chin-Up"
+      }
+    },
+    {
+      "exercise_id": "neutral_grip_pull_up",
+      "name": "Neutral-Grip Pull-Up",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "mid_back",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "pull_up_bar"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "V-Bar_Pullup"
+      }
+    },
+    {
+      "exercise_id": "band_assisted_pull_up",
+      "name": "Band-Assisted Pull-Up",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [
+        "abs",
+        "forearms",
+        "mid_back"
+      ],
+      "equipment_options": [
+        [
+          "pull_up_bar",
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Band_Assisted_Pull-Up"
+      }
+    },
+    {
+      "exercise_id": "scapular_pull_up",
+      "name": "Scapular Pull-Up",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "traps"
+      ],
+      "secondary_muscles": [
+        "lats",
+        "mid_back"
+      ],
+      "equipment_options": [
+        [
+          "pull_up_bar"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Scapular_Pull-Up"
+      }
+    },
+    {
+      "exercise_id": "wide_grip_lat_pulldown",
+      "name": "Wide-Grip Lat Pulldown",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "mid_back",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ],
+        [
+          "lat_pulldown_machine"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Wide-Grip_Lat_Pulldown"
+      }
+    },
+    {
+      "exercise_id": "underhand_lat_pulldown",
+      "name": "Underhand Lat Pulldown",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "mid_back",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ],
+        [
+          "lat_pulldown_machine"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Underhand_Cable_Pulldowns"
+      }
+    },
+    {
+      "exercise_id": "v_bar_lat_pulldown",
+      "name": "V-Bar Lat Pulldown",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "mid_back",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ],
+        [
+          "lat_pulldown_machine"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "V-Bar_Pulldown"
+      }
+    },
+    {
+      "exercise_id": "one_arm_lat_pulldown",
+      "name": "One-Arm Lat Pulldown",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "mid_back"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "One_Arm_Lat_Pulldown"
+      }
+    },
+    {
+      "exercise_id": "straight_arm_pulldown",
+      "name": "Straight-Arm Pulldown",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Straight-Arm_Pulldown"
+      }
+    },
+    {
+      "exercise_id": "straight_arm_dumbbell_pullover",
+      "name": "Straight-Arm Dumbbell Pullover",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "lats",
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ],
+        [
+          "dumbbell",
+          "flat_bench"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead",
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Straight-Arm_Dumbbell_Pullover"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_pullover",
+      "name": "Dumbbell Pullover",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "lats",
+        "chest"
+      ],
+      "secondary_muscles": [
+        "triceps",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ],
+        [
+          "dumbbell",
+          "flat_bench"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead",
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "floor_dumbbell_pullover",
+      "name": "Floor Dumbbell Pullover",
+      "movement_pattern": "vertical_pull",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lats",
+        "chest"
+      ],
+      "secondary_muscles": [
+        "triceps",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead",
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "hypertrophy",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "farmers_carry",
+      "name": "Farmer's Carry",
+      "movement_pattern": "carry",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "forearms",
+        "traps",
+        "core"
+      ],
+      "secondary_muscles": [
+        "glutes"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ],
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "suitcase_carry",
+      "name": "Suitcase Carry",
+      "movement_pattern": "carry",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "obliques",
+        "forearms",
+        "traps"
+      ],
+      "secondary_muscles": [
+        "glutes"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ],
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "single_arm_front_rack_carry",
+      "name": "Single-Arm Front Rack Carry",
+      "movement_pattern": "carry",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 2,
+      "primary_muscles": [
+        "core",
+        "delts",
+        "forearms"
+      ],
+      "secondary_muscles": [
+        "obliques"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ],
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "overhead_carry",
+      "name": "Overhead Carry",
+      "movement_pattern": "carry",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 2,
+      "primary_muscles": [
+        "delts",
+        "core",
+        "traps"
+      ],
+      "secondary_muscles": [
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ],
+        [
+          "kettlebell"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "sandbag_bear_hug_carry",
+      "name": "Sandbag Bear-Hug Carry",
+      "movement_pattern": "carry",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 2,
+      "primary_muscles": [
+        "core",
+        "upper_back",
+        "biceps"
+      ],
+      "secondary_muscles": [
+        "glutes"
+      ],
+      "equipment_options": [
+        [
+          "sandbag"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "forearm_plank",
+      "name": "Forearm Plank",
+      "movement_pattern": "core_anti_extension",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Plank"
+      }
+    },
+    {
+      "exercise_id": "dead_bug",
+      "name": "Dead Bug",
+      "movement_pattern": "core_anti_extension",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dead_Bug"
+      }
+    },
+    {
+      "exercise_id": "hollow_hold",
+      "name": "Hollow Hold",
+      "movement_pattern": "core_anti_extension",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 2,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [
+        "hip_flexors"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "ab_wheel_rollout",
+      "name": "Ab Wheel Rollout",
+      "movement_pattern": "core_anti_extension",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 3,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "ab_wheel"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Ab_Roller"
+      }
+    },
+    {
+      "exercise_id": "suspension_trainer_fallout",
+      "name": "Suspension Trainer Fallout",
+      "movement_pattern": "core_anti_extension",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [
+        "chest",
+        "lower_back",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "suspension_trainer"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Suspended_Fallout"
+      }
+    },
+    {
+      "exercise_id": "cable_pallof_press",
+      "name": "Cable Pallof Press",
+      "movement_pattern": "core_anti_rotation",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [
+        "chest",
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Pallof_Press"
+      }
+    },
+    {
+      "exercise_id": "cable_pallof_press_with_rotation",
+      "name": "Cable Pallof Press with Rotation",
+      "movement_pattern": "core_anti_rotation",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [
+        "chest",
+        "delts",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Pallof_Press_With_Rotation"
+      }
+    },
+    {
+      "exercise_id": "side_plank",
+      "name": "Side Plank",
+      "movement_pattern": "core_anti_rotation",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [
+        "delts"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Side_Bridge"
+      }
+    },
+    {
+      "exercise_id": "bird_dog",
+      "name": "Bird Dog",
+      "movement_pattern": "core_anti_rotation",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs",
+        "lower_back",
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "delts"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "plank_shoulder_taps",
+      "name": "Plank Shoulder Taps",
+      "movement_pattern": "core_anti_rotation",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "abs",
+        "obliques"
+      ],
+      "secondary_muscles": [
+        "delts"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "banded_pallof_press",
+      "name": "Banded Pallof Press",
+      "movement_pattern": "core_anti_rotation",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "obliques",
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "crunch",
+      "name": "Crunch",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Crunches"
+      }
+    },
+    {
+      "exercise_id": "reverse_crunch",
+      "name": "Reverse Crunch",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Reverse_Crunch"
+      }
+    },
+    {
+      "exercise_id": "sit_up",
+      "name": "Sit-Up",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Sit-Up"
+      }
+    },
+    {
+      "exercise_id": "bent_knee_hip_raise",
+      "name": "Bent-Knee Hip Raise",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Bent-Knee_Hip_Raise"
+      }
+    },
+    {
+      "exercise_id": "flutter_kicks",
+      "name": "Flutter Kicks",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Flutter_Kicks"
+      }
+    },
+    {
+      "exercise_id": "russian_twist",
+      "name": "Russian Twist",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [
+        "lower_back"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Russian_Twist"
+      }
+    },
+    {
+      "exercise_id": "bicycle_crunch",
+      "name": "Bicycle Crunch",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Air_Bike"
+      }
+    },
+    {
+      "exercise_id": "hanging_leg_raise",
+      "name": "Hanging Leg Raise",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 3,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "pull_up_bar"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Hanging_Leg_Raise"
+      }
+    },
+    {
+      "exercise_id": "cable_crunch",
+      "name": "Cable Crunch",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [
+        "spine:loaded_flexion"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Cable_Crunch"
+      }
+    },
+    {
+      "exercise_id": "cable_russian_twist",
+      "name": "Cable Russian Twist",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [
+        "spine:loaded_flexion"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Cable_Russian_Twists"
+      }
+    },
+    {
+      "exercise_id": "cable_wood_chop",
+      "name": "Cable Wood Chop",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [
+        "spine:loaded_flexion"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Standing_Cable_Wood_Chop"
+      }
+    },
+    {
+      "exercise_id": "stability_ball_crunch",
+      "name": "Stability Ball Crunch",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "stability_ball"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Exercise_Ball_Crunch"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_side_bend",
+      "name": "Dumbbell Side Bend",
+      "movement_pattern": "core_flexion",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "spine:loaded_flexion"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "strength"
+      ],
+      "impact_level": "low",
+      "default_tempo": "2011",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Side_Bend"
+      }
+    },
+    {
+      "exercise_id": "mountain_climber",
+      "name": "Mountain Climber",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "alternating",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "chest",
+        "hamstrings",
+        "delts"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness"
+      ],
+      "impact_level": "moderate",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Mountain_Climbers"
+      }
+    },
+    {
+      "exercise_id": "jumping_jacks",
+      "name": "Jumping Jacks",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "full_body"
+      ],
+      "secondary_muscles": [
+        "calves"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness"
+      ],
+      "impact_level": "moderate",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "high_knees",
+      "name": "High Knees",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "alternating",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads",
+        "hip_flexors"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "abs"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness"
+      ],
+      "impact_level": "moderate",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "burpee",
+      "name": "Burpee",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "full_body"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [
+        "ankle:high_impact",
+        "hip:high_impact",
+        "knee:high_impact",
+        "spine:high_impact",
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness",
+        "power"
+      ],
+      "impact_level": "high",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "skaters",
+      "name": "Skaters",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "alternating",
+      "measure": "time",
+      "difficulty": 2,
+      "primary_muscles": [
+        "glutes",
+        "quads",
+        "abductors"
+      ],
+      "secondary_muscles": [
+        "calves"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "ankle:high_impact",
+        "hip:high_impact",
+        "knee:high_impact",
+        "knee:pivoting",
+        "spine:high_impact"
+      ],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness",
+        "power"
+      ],
+      "impact_level": "high",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "star_jump",
+      "name": "Star Jump",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings",
+        "delts"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "ankle:high_impact",
+        "hip:high_impact",
+        "knee:high_impact",
+        "spine:high_impact"
+      ],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness",
+        "power"
+      ],
+      "impact_level": "high",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Star_Jump"
+      }
+    },
+    {
+      "exercise_id": "standing_long_jump",
+      "name": "Standing Long Jump",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "ankle:high_impact",
+        "hip:high_impact",
+        "knee:high_impact",
+        "spine:high_impact"
+      ],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness",
+        "power"
+      ],
+      "impact_level": "high",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Standing_Long_Jump"
+      }
+    },
+    {
+      "exercise_id": "jump_squat",
+      "name": "Jump Squat",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "ankle:high_impact",
+        "hip:high_impact",
+        "knee:high_impact",
+        "spine:high_impact"
+      ],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness",
+        "power"
+      ],
+      "impact_level": "high",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Freehand_Jump_Squat"
+      }
+    },
+    {
+      "exercise_id": "split_jump",
+      "name": "Split Jump",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "ankle:high_impact",
+        "hip:high_impact",
+        "knee:high_impact",
+        "spine:high_impact"
+      ],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness",
+        "power"
+      ],
+      "impact_level": "high",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Split_Jump"
+      }
+    },
+    {
+      "exercise_id": "box_jump",
+      "name": "Box Jump",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "abductors",
+        "adductors",
+        "calves",
+        "glutes",
+        "quads"
+      ],
+      "equipment_options": [
+        [
+          "plyo_box"
+        ]
+      ],
+      "contraindications": [
+        "ankle:high_impact",
+        "hip:high_impact",
+        "knee:high_impact",
+        "spine:high_impact"
+      ],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness",
+        "power"
+      ],
+      "impact_level": "high",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Front_Box_Jump"
+      }
+    },
+    {
+      "exercise_id": "jump_rope",
+      "name": "Jump Rope",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "jump_rope"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness"
+      ],
+      "impact_level": "moderate",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Rope_Jumping"
+      }
+    },
+    {
+      "exercise_id": "medicine_ball_slam",
+      "name": "Medicine Ball Slam",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "medicine_ball"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness"
+      ],
+      "impact_level": "moderate",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Overhead_Slam"
+      }
+    },
+    {
+      "exercise_id": "treadmill_jog",
+      "name": "Treadmill Jog",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "treadmill"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness"
+      ],
+      "impact_level": "moderate",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Jogging_Treadmill"
+      }
+    },
+    {
+      "exercise_id": "treadmill_walk",
+      "name": "Treadmill Walk",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "treadmill"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Walking_Treadmill"
+      }
+    },
+    {
+      "exercise_id": "rowing_machine",
+      "name": "Rowing Machine",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "biceps",
+        "calves",
+        "glutes",
+        "hamstrings",
+        "lower_back",
+        "mid_back"
+      ],
+      "equipment_options": [
+        [
+          "rowing_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Rowing_Stationary"
+      }
+    },
+    {
+      "exercise_id": "elliptical",
+      "name": "Elliptical",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "elliptical"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Elliptical_Trainer"
+      }
+    },
+    {
+      "exercise_id": "stationary_bike",
+      "name": "Stationary Bike",
+      "movement_pattern": "conditioning",
+      "modality": "conditioning",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "stationary_bike"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "endurance",
+        "fat_loss",
+        "general_fitness"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Bicycling_Stationary"
+      }
+    },
+    {
+      "exercise_id": "worlds_greatest_stretch",
+      "name": "World's Greatest Stretch",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes",
+        "quads"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Worlds_Greatest_Stretch"
+      }
+    },
+    {
+      "exercise_id": "inchworm",
+      "name": "Inchworm",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Inchworm"
+      }
+    },
+    {
+      "exercise_id": "arm_circles",
+      "name": "Arm Circles",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "traps"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Arm_Circles"
+      }
+    },
+    {
+      "exercise_id": "shoulder_circles",
+      "name": "Shoulder Circles",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "traps"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Shoulder_Circles"
+      }
+    },
+    {
+      "exercise_id": "standing_hip_circles",
+      "name": "Standing Hip Circles",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abductors"
+      ],
+      "secondary_muscles": [
+        "adductors"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Standing_Hip_Circles"
+      }
+    },
+    {
+      "exercise_id": "ankle_circles",
+      "name": "Ankle Circles",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "calves"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Ankle_Circles"
+      }
+    },
+    {
+      "exercise_id": "cat_cow",
+      "name": "Cat-Cow",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lower_back"
+      ],
+      "secondary_muscles": [
+        "mid_back",
+        "traps"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Cat_Stretch"
+      }
+    },
+    {
+      "exercise_id": "dynamic_chest_stretch",
+      "name": "Dynamic Chest Stretch",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "mid_back"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dynamic_Chest_Stretch"
+      }
+    },
+    {
+      "exercise_id": "dynamic_back_stretch",
+      "name": "Dynamic Back Stretch",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dynamic_Back_Stretch"
+      }
+    },
+    {
+      "exercise_id": "windmill_reach",
+      "name": "Windmill Reach",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abductors"
+      ],
+      "secondary_muscles": [
+        "glutes",
+        "hamstrings",
+        "lower_back"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Windmills"
+      }
+    },
+    {
+      "exercise_id": "groiner",
+      "name": "Groiner",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "adductors"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [
+        "hip:end_range",
+        "wrist:weight_bearing"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Groiners"
+      }
+    },
+    {
+      "exercise_id": "wrist_circles",
+      "name": "Wrist Circles",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "forearms"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Wrist_Circles"
+      }
+    },
+    {
+      "exercise_id": "leg_swings",
+      "name": "Leg Swings",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "hamstrings",
+        "hip_flexors"
+      ],
+      "secondary_muscles": [
+        "glutes"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "open_book_rotation",
+      "name": "Open Book Rotation",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "thoracic_spine"
+      ],
+      "secondary_muscles": [
+        "obliques"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "foam_roll_quads",
+      "name": "Foam Roll Quads",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "foam_roller"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Quadriceps-SMR"
+      }
+    },
+    {
+      "exercise_id": "foam_roll_hamstrings",
+      "name": "Foam Roll Hamstrings",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "foam_roller"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Hamstring-SMR"
+      }
+    },
+    {
+      "exercise_id": "foam_roll_calves",
+      "name": "Foam Roll Calves",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "calves"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "foam_roller"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Calves-SMR"
+      }
+    },
+    {
+      "exercise_id": "foam_roll_lats",
+      "name": "Foam Roll Lats",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lats"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "foam_roller"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Latissimus_Dorsi-SMR"
+      }
+    },
+    {
+      "exercise_id": "foam_roll_it_band",
+      "name": "Foam Roll IT Band",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abductors"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "foam_roller"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Iliotibial_Tract-SMR"
+      }
+    },
+    {
+      "exercise_id": "foam_roll_glutes",
+      "name": "Foam Roll Glutes",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "glutes"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "foam_roller"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Piriformis-SMR"
+      }
+    },
+    {
+      "exercise_id": "foam_roll_upper_back",
+      "name": "Foam Roll Upper Back",
+      "movement_pattern": "mobility",
+      "modality": "warmup",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "mid_back"
+      ],
+      "secondary_muscles": [
+        "traps"
+      ],
+      "equipment_options": [
+        [
+          "foam_roller"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Rhomboids-SMR"
+      }
+    },
+    {
+      "exercise_id": "childs_pose",
+      "name": "Child's Pose",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lower_back"
+      ],
+      "secondary_muscles": [
+        "glutes",
+        "mid_back"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Childs_Pose"
+      }
+    },
+    {
+      "exercise_id": "kneeling_hip_flexor_stretch",
+      "name": "Kneeling Hip Flexor Stretch",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Kneeling_Hip_Flexor"
+      }
+    },
+    {
+      "exercise_id": "hamstring_stretch_90_90",
+      "name": "Hamstring Stretch (90/90)",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "calves"
+      ],
+      "equipment_options": [],
+      "contraindications": [
+        "hip:end_range"
+      ],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "90_90_Hamstring"
+      }
+    },
+    {
+      "exercise_id": "seated_hamstring_stretch",
+      "name": "Seated Hamstring Stretch",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "calves"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Seated_Floor_Hamstring_Stretch"
+      }
+    },
+    {
+      "exercise_id": "standing_calf_stretch",
+      "name": "Standing Calf Stretch",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "calves"
+      ],
+      "secondary_muscles": [
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Standing_Gastrocnemius_Calf_Stretch"
+      }
+    },
+    {
+      "exercise_id": "soleus_and_achilles_stretch",
+      "name": "Soleus and Achilles Stretch",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "calves"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Standing_Soleus_And_Achilles_Stretch"
+      }
+    },
+    {
+      "exercise_id": "quad_stretch",
+      "name": "Quad Stretch",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "All_Fours_Quad_Stretch"
+      }
+    },
+    {
+      "exercise_id": "knee_across_the_body_stretch",
+      "name": "Knee Across the Body Stretch",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "abductors",
+        "lower_back"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Knee_Across_The_Body"
+      }
+    },
+    {
+      "exercise_id": "hug_knees_to_chest",
+      "name": "Hug Knees to Chest",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "lower_back"
+      ],
+      "secondary_muscles": [
+        "glutes"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Hug_Knees_To_Chest"
+      }
+    },
+    {
+      "exercise_id": "triceps_stretch",
+      "name": "Triceps Stretch",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "triceps"
+      ],
+      "secondary_muscles": [
+        "lats"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Triceps_Stretch"
+      }
+    },
+    {
+      "exercise_id": "cross_body_shoulder_stretch",
+      "name": "Cross-Body Shoulder Stretch",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Shoulder_Stretch"
+      }
+    },
+    {
+      "exercise_id": "upper_back_stretch",
+      "name": "Upper Back Stretch",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "mid_back"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Upper_Back_Stretch"
+      }
+    },
+    {
+      "exercise_id": "standing_side_stretch",
+      "name": "Standing Side Stretch",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abs"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Standing_Lateral_Stretch"
+      }
+    },
+    {
+      "exercise_id": "side_neck_stretch",
+      "name": "Side Neck Stretch",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "unilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "neck"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Side_Neck_Stretch"
+      }
+    },
+    {
+      "exercise_id": "chin_to_chest_stretch",
+      "name": "Chin to Chest Stretch",
+      "movement_pattern": "mobility",
+      "modality": "mobility",
+      "laterality": "bilateral",
+      "measure": "time",
+      "difficulty": 1,
+      "primary_muscles": [
+        "neck"
+      ],
+      "secondary_muscles": [
+        "traps"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "general_fitness",
+        "mobility"
+      ],
+      "impact_level": "low",
+      "default_tempo": null,
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Chin_To_Chest_Stretch"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_biceps_curl",
+      "name": "Dumbbell Biceps Curl",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "biceps"
+      ],
+      "secondary_muscles": [
+        "forearms"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Bicep_Curl"
+      }
+    },
+    {
+      "exercise_id": "hammer_curl",
+      "name": "Hammer Curl",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "biceps"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Hammer_Curls"
+      }
+    },
+    {
+      "exercise_id": "concentration_curl",
+      "name": "Concentration Curl",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "biceps"
+      ],
+      "secondary_muscles": [
+        "forearms"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Concentration_Curls"
+      }
+    },
+    {
+      "exercise_id": "incline_dumbbell_curl",
+      "name": "Incline Dumbbell Curl",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "biceps"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Incline_Dumbbell_Curl"
+      }
+    },
+    {
+      "exercise_id": "zottman_curl",
+      "name": "Zottman Curl",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "biceps"
+      ],
+      "secondary_muscles": [
+        "forearms"
+      ],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Zottman_Curl"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_lateral_raise",
+      "name": "Dumbbell Lateral Raise",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Side_Lateral_Raise"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_front_raise",
+      "name": "Dumbbell Front Raise",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Front_Two-Dumbbell_Raise"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_rear_delt_fly",
+      "name": "Dumbbell Rear Delt Fly",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Reverse_Flyes"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_shrug",
+      "name": "Dumbbell Shrug",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "traps"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Shrug"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_chest_fly",
+      "name": "Dumbbell Chest Fly",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ],
+        [
+          "dumbbell",
+          "flat_bench"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Dumbbell_Flyes"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_triceps_kickback",
+      "name": "Dumbbell Triceps Kickback",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "triceps"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Tricep_Dumbbell_Kickback"
+      }
+    },
+    {
+      "exercise_id": "standing_dumbbell_overhead_triceps_extension",
+      "name": "Standing Dumbbell Overhead Triceps Extension",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "triceps"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Standing_Dumbbell_Triceps_Extension"
+      }
+    },
+    {
+      "exercise_id": "lying_dumbbell_triceps_extension",
+      "name": "Lying Dumbbell Triceps Extension",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "triceps"
+      ],
+      "secondary_muscles": [
+        "chest",
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "dumbbell"
+        ],
+        [
+          "dumbbell",
+          "flat_bench"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Lying_Dumbbell_Tricep_Extension"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_wrist_curl",
+      "name": "Dumbbell Wrist Curl",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "forearms"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "wrist:loaded_extension"
+      ],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Palms-Up_Dumbbell_Wrist_Curl_Over_A_Bench"
+      }
+    },
+    {
+      "exercise_id": "barbell_curl",
+      "name": "Barbell Curl",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "biceps"
+      ],
+      "secondary_muscles": [
+        "forearms"
+      ],
+      "equipment_options": [
+        [
+          "barbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Barbell_Curl"
+      }
+    },
+    {
+      "exercise_id": "barbell_shrug",
+      "name": "Barbell Shrug",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "traps"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "barbell"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Barbell_Shrug"
+      }
+    },
+    {
+      "exercise_id": "ez_bar_curl",
+      "name": "EZ-Bar Curl",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "biceps"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "ez_bar"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "EZ-Bar_Curl"
+      }
+    },
+    {
+      "exercise_id": "ez_bar_skullcrusher",
+      "name": "EZ-Bar Skullcrusher",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "triceps"
+      ],
+      "secondary_muscles": [
+        "forearms"
+      ],
+      "equipment_options": [
+        [
+          "adjustable_bench",
+          "ez_bar"
+        ],
+        [
+          "ez_bar",
+          "flat_bench"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "EZ-Bar_Skullcrusher"
+      }
+    },
+    {
+      "exercise_id": "cable_triceps_pushdown",
+      "name": "Cable Triceps Pushdown",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "triceps"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Triceps_Pushdown"
+      }
+    },
+    {
+      "exercise_id": "cable_biceps_curl",
+      "name": "Cable Biceps Curl",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "biceps"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Standing_Biceps_Cable_Curl"
+      }
+    },
+    {
+      "exercise_id": "cable_overhead_triceps_extension",
+      "name": "Cable Overhead Triceps Extension",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "triceps"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [
+        "shoulder:overhead_loaded"
+      ],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Cable_Rope_Overhead_Triceps_Extension"
+      }
+    },
+    {
+      "exercise_id": "cable_crossover",
+      "name": "Cable Crossover",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "chest"
+      ],
+      "secondary_muscles": [
+        "delts"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Cable_Crossover"
+      }
+    },
+    {
+      "exercise_id": "cable_rear_delt_fly",
+      "name": "Cable Rear Delt Fly",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Cable_Rear_Delt_Fly"
+      }
+    },
+    {
+      "exercise_id": "cable_lateral_raise",
+      "name": "Cable Lateral Raise",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "forearms"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Standing_Low-Pulley_Deltoid_Raise"
+      }
+    },
+    {
+      "exercise_id": "banded_lateral_raise",
+      "name": "Banded Lateral Raise",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Lateral_Raise_-_With_Bands"
+      }
+    },
+    {
+      "exercise_id": "banded_external_rotation",
+      "name": "Banded External Rotation",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "External_Rotation_with_Band"
+      }
+    },
+    {
+      "exercise_id": "banded_rear_delt_fly",
+      "name": "Banded Rear Delt Fly",
+      "movement_pattern": "isolation_upper",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "delts"
+      ],
+      "secondary_muscles": [
+        "mid_back",
+        "triceps"
+      ],
+      "equipment_options": [
+        [
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Back_Flyes_-_With_Bands"
+      }
+    },
+    {
+      "exercise_id": "dumbbell_standing_calf_raise",
+      "name": "Dumbbell Standing Calf Raise",
+      "movement_pattern": "isolation_lower",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "calves"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "dumbbell"
+        ]
+      ],
+      "contraindications": [
+        "ankle:loaded_plantarflexion"
+      ],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Standing_Dumbbell_Calf_Raise"
+      }
+    },
+    {
+      "exercise_id": "banded_calf_raise",
+      "name": "Banded Calf Raise",
+      "movement_pattern": "isolation_lower",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "calves"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [
+        "ankle:loaded_plantarflexion"
+      ],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Calf_Raises_-_With_Bands"
+      }
+    },
+    {
+      "exercise_id": "bodyweight_calf_raise",
+      "name": "Bodyweight Calf Raise",
+      "movement_pattern": "isolation_lower",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "calves"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [
+        "ankle:loaded_plantarflexion"
+      ],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "single_leg_calf_raise",
+      "name": "Single-Leg Calf Raise",
+      "movement_pattern": "isolation_lower",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "calves"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [
+        "ankle:loaded_plantarflexion"
+      ],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "in_house",
+        "ref": null
+      }
+    },
+    {
+      "exercise_id": "machine_leg_extension",
+      "name": "Machine Leg Extension",
+      "movement_pattern": "isolation_lower",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "quads"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "leg_extension_machine"
+        ]
+      ],
+      "contraindications": [
+        "knee:loaded_extension"
+      ],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Leg_Extensions"
+      }
+    },
+    {
+      "exercise_id": "lying_leg_curl",
+      "name": "Lying Leg Curl",
+      "movement_pattern": "isolation_lower",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "leg_curl_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Lying_Leg_Curls"
+      }
+    },
+    {
+      "exercise_id": "seated_leg_curl",
+      "name": "Seated Leg Curl",
+      "movement_pattern": "isolation_lower",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "leg_curl_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Seated_Leg_Curl"
+      }
+    },
+    {
+      "exercise_id": "glute_kickback",
+      "name": "Glute Kickback",
+      "movement_pattern": "isolation_lower",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "hamstrings"
+      ],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Glute_Kickback"
+      }
+    },
+    {
+      "exercise_id": "side_lying_leg_raise",
+      "name": "Side-Lying Leg Raise",
+      "movement_pattern": "isolation_lower",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "adductors"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Side_Leg_Raises"
+      }
+    },
+    {
+      "exercise_id": "cable_glute_kickback",
+      "name": "Cable Glute Kickback",
+      "movement_pattern": "isolation_lower",
+      "modality": "strength",
+      "laterality": "unilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "glutes"
+      ],
+      "secondary_muscles": [
+        "hamstrings"
+      ],
+      "equipment_options": [
+        [
+          "cable_machine"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "One-Legged_Cable_Kickback"
+      }
+    },
+    {
+      "exercise_id": "banded_monster_walk",
+      "name": "Banded Monster Walk",
+      "movement_pattern": "isolation_lower",
+      "modality": "strength",
+      "laterality": "alternating",
+      "measure": "reps",
+      "difficulty": 1,
+      "primary_muscles": [
+        "abductors"
+      ],
+      "secondary_muscles": [],
+      "equipment_options": [
+        [
+          "resistance_band"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Monster_Walk"
+      }
+    },
+    {
+      "exercise_id": "stability_ball_hamstring_curl",
+      "name": "Stability Ball Hamstring Curl",
+      "movement_pattern": "isolation_lower",
+      "modality": "strength",
+      "laterality": "bilateral",
+      "measure": "reps",
+      "difficulty": 2,
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "calves",
+        "glutes"
+      ],
+      "equipment_options": [
+        [
+          "stability_ball"
+        ]
+      ],
+      "contraindications": [],
+      "goal_tags": [
+        "hypertrophy"
+      ],
+      "impact_level": "low",
+      "default_tempo": "3010",
+      "source": {
+        "kind": "free-exercise-db",
+        "ref": "Ball_Leg_Curl"
+      }
+    }
+  ]
+}
