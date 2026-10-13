@@ -4,6 +4,7 @@ from app.models.fitness_plan import FitnessPlan
 from app.models.plan_day import PlanDay
 from app.models.equipment import Equipment, UserEquipment
 from app.models.exercise import ExerciseDefinition, ExerciseEquipmentOption
+from app.models.user_profile import UserProfile
 
 __all__ = [
     "User",
@@ -14,4 +15,5 @@ __all__ = [
     "UserEquipment",
     "ExerciseDefinition",
     "ExerciseEquipmentOption",
+    "UserProfile",
 ]

@@ -14,6 +14,7 @@ from app.models import user  # noqa: F401
 from app.models import user_session  # noqa: F401
 from app.models import equipment  # noqa: F401
 from app.models import exercise  # noqa: F401
+from app.models import user_profile  # noqa: F401
 from app.models.base import Base
 
 

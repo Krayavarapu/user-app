@@ -26,6 +26,8 @@ spine
   axial_loading_heavy  barbell or Smith machine loading through the spine (squats, deadlifts,
                        overhead presses, bent-over rows)
   loaded_flexion       loaded trunk flexion / side bending
+  loaded_hinge         loaded hip hinging with any implement (deadlifts, Romanian deadlifts, good
+                       mornings, swings, pull-throughs); supported bridges and thrusts excluded
   high_impact          jumping / landing / bounding
 wrist
   loaded_extension  wrist curls, front-rack positions
@@ -60,6 +62,7 @@ CONTRAINDICATION_TAGS: FrozenSet[str] = frozenset(
         "knee:pivoting",
         "spine:axial_loading_heavy",
         "spine:loaded_flexion",
+        "spine:loaded_hinge",
         "spine:high_impact",
         "wrist:loaded_extension",
         "wrist:weight_bearing",

@@ -178,3 +178,33 @@ def test_tempo_only_for_controlled_rep_based_strength_work() -> None:
     assert derive_default_tempo(name="Plank", pattern="core_anti_extension", modality="strength", measure="time") is None
     assert derive_default_tempo(name="Kettlebell Swing", pattern="hinge", modality="strength", measure="reps") is None
     assert derive_default_tempo(name="Treadmill Jog", pattern="conditioning", modality="conditioning", measure="time") is None
+
+
+# --- loaded hinge (severe lower-back rule) ------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "name, equipment",
+    [
+        ("Dumbbell Romanian Deadlift", ["dumbbell"]),
+        ("Kettlebell Swing", ["kettlebell", "dumbbell"]),
+        ("Cable Pull-Through", ["cable_machine"]),
+        ("Barbell Deadlift", ["barbell"]),
+    ],
+)
+def test_loaded_hinges_are_tagged(name, equipment) -> None:
+    assert "spine:loaded_hinge" in tags(name, "hinge", equipment=equipment)
+
+
+@pytest.mark.parametrize(
+    "name, equipment",
+    [
+        ("Barbell Hip Thrust", ["barbell", "flat_bench"]),
+        ("Dumbbell Glute Bridge", ["dumbbell"]),
+        ("Glute Bridge", []),
+        ("Bodyweight Good Morning", []),
+        ("Floor Back Extension", []),
+    ],
+)
+def test_supported_or_unloaded_hinges_are_not_tagged(name, equipment) -> None:
+    assert "spine:loaded_hinge" not in tags(name, "hinge", equipment=equipment)

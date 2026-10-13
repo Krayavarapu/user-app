@@ -1360,6 +1360,34 @@ Each phase is a separate PR into `feature/rag-integration` (or into `main` behin
 
 ---
 
+## 13.1 Phase 3 decisions (implemented)
+
+Decided before building Phase 3; these supersede the design text above where they differ and settle open questions 6, 7 and 8.
+
+- **Limitation codes (v1):** shoulder, knee, lower_back, wrist, hip, ankle, neck. No pregnancy, cardiovascular or other medical flags are collected.
+- **Missing profile:** generation uses conservative defaults (beginner, 3 days/week, 45 min, no limitations) and records `profile_defaults_used`. `GET /users/me/profile` returns those defaults with `is_default: true` and never creates a row.
+- **Goal:** the profile stores a fixed `primary_goal` (strength, hypertrophy, fat_loss, endurance, general_fitness, mobility), used to rank exercises. The request's free-text `goal` stays as prompt context.
+- **Per-request overrides** (equipment, limitations, ...) apply to that plan only; they never change the saved profile.
+- **Biometrics:** age, weight and height are prompt context only; they drive no hard exclusions.
+- **Frontend:** no profile UI until Phase 8.
+- **Limitation rules** live in `app/services/plan_pipeline/rules.py` (`RULES_VERSION = "rules-v1"`). Severity is cumulative. Compared with the §3.3 sketch: behind-the-neck moved from moderate to **mild** and dips from severe to **moderate** (shoulder); a new tag `spine:loaded_hinge` is excluded at severe lower back; moderate neck excludes barbell overhead pressing and heavy spinal loading; severe knee, hip and ankle also cap `impact_level` at `low`. Heuristics only, with no coach or physical therapist review.
+
+| Limitation | Mild excludes | Moderate adds | Severe adds |
+|---|---|---|---|
+| shoulder | `shoulder:overhead_heavy`, `shoulder:behind_neck` | `shoulder:overhead_loaded`, `shoulder:dip` | `shoulder:overhead` |
+| knee | `knee:high_impact` | `knee:pivoting`, `knee:loaded_extension` | `knee:deep_flexion_loaded`, impact cap `low` |
+| lower_back | `spine:axial_loading_heavy` | `spine:loaded_flexion`, `spine:high_impact` | `spine:loaded_hinge` |
+| wrist | `wrist:loaded_extension` | `wrist:weight_bearing` | (nothing) |
+| hip | `hip:high_impact` | `hip:end_range` | `hip:deep_flexion_loaded`, impact cap `low` |
+| ankle | `ankle:high_impact` | `ankle:single_leg_balance` | `ankle:loaded_plantarflexion`, impact cap `low` |
+| neck | `neck:loaded` | `shoulder:overhead_heavy`, `spine:axial_loading_heavy` | (nothing) |
+
+**Known menu gap:** a bodyweight-only user with a moderate or severe wrist limitation has no pushing exercise (every bodyweight push loads the hands). The pre-filter's minimum-coverage check (§8, `InsufficientMenuError`) must tell this user to add equipment; a resistance band is enough. Tracked in `tests/test_plan_rules.py::KNOWN_MENU_GAPS`.
+
+**API (Phase 3):** `GET /users/me/profile` and `PUT /users/me/profile` (authenticated, caller only). `PUT` replaces the whole profile and the user's equipment in one transaction. `limitations` and `equipment_ids` are required on `PUT` (send `[]` for none) and unknown fields are rejected, so omitting or misspelling a safety field can never silently erase it. Unknown or retired equipment IDs return 422.
+
+---
+
 ## 14. Open questions
 
 These need your decision. Items marked **(API contract)** change what the frontend sends or receives, so I haven't decided them. The design above takes the backward-compatible option in each case.

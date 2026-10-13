@@ -12,13 +12,17 @@ from sqlalchemy import create_engine, inspect
 from app.models.base import Base
 from app.models.equipment import Equipment, UserEquipment
 from app.models.exercise import ExerciseDefinition, ExerciseEquipmentOption
+from app.models.user_profile import UserProfile
 
 ROOT = Path(__file__).resolve().parents[1]
 PREVIOUS_REVISION = "20260508_0006"
 EQUIPMENT_REVISION = "20261007_0007"
-LIBRARY_REVISION = "20261008_0008"  # head
+LIBRARY_REVISION = "20261008_0008"
+PROFILE_REVISION = "20261009_0009"  # head
 EQUIPMENT_TABLES = {"equipment", "user_equipment"}
 LIBRARY_TABLES = {"exercise_definitions", "exercise_equipment_options"}
+PROFILE_TABLES = {"user_profiles"}
+NEW_TABLES = EQUIPMENT_TABLES | LIBRARY_TABLES | PROFILE_TABLES
 
 
 class MigrationDb:
@@ -61,14 +65,14 @@ def migration_db(tmp_path) -> MigrationDb:
     return MigrationDb(tmp_path / "migrations.db")
 
 
-def test_upgrade_head_creates_equipment_and_library_tables(migration_db) -> None:
+def test_upgrade_head_creates_equipment_library_and_profile_tables(migration_db) -> None:
     migration_db.alembic("upgrade", "head")
 
-    assert EQUIPMENT_TABLES | LIBRARY_TABLES <= migration_db.tables()
+    assert NEW_TABLES <= migration_db.tables()
     assert "ix_user_equipment_user_id" in migration_db.indexes("user_equipment")
     assert "ix_exercise_definitions_movement_pattern" in migration_db.indexes("exercise_definitions")
     assert "ix_exercise_equipment_options_equipment_id" in migration_db.indexes("exercise_equipment_options")
-    assert f"{LIBRARY_REVISION} (head)" in migration_db.current()
+    assert f"{PROFILE_REVISION} (head)" in migration_db.current()
 
 
 def test_upgrade_head_twice_is_a_no_op(migration_db) -> None:
@@ -78,12 +82,24 @@ def test_upgrade_head_twice_is_a_no_op(migration_db) -> None:
     assert migration_db.tables() == tables_after_first
 
 
-def test_downgrade_one_step_removes_only_the_library_tables(migration_db) -> None:
+def test_downgrade_one_step_removes_only_the_profile_table(migration_db) -> None:
+    migration_db.alembic("upgrade", "head")
+    before = migration_db.tables()
+
+    migration_db.alembic("downgrade", LIBRARY_REVISION)
+    assert before - migration_db.tables() == PROFILE_TABLES
+    assert EQUIPMENT_TABLES | LIBRARY_TABLES <= migration_db.tables()
+
+    migration_db.alembic("upgrade", "head")
+    assert migration_db.tables() == before
+
+
+def test_downgrade_two_steps_removes_the_library_tables_too(migration_db) -> None:
     migration_db.alembic("upgrade", "head")
     before = migration_db.tables()
 
     migration_db.alembic("downgrade", EQUIPMENT_REVISION)
-    assert before - migration_db.tables() == LIBRARY_TABLES
+    assert before - migration_db.tables() == LIBRARY_TABLES | PROFILE_TABLES
     assert EQUIPMENT_TABLES <= migration_db.tables()
 
     migration_db.alembic("upgrade", "head")
@@ -96,7 +112,7 @@ def test_downgrade_removes_only_the_new_tables_and_can_reapply(migration_db) -> 
 
     migration_db.alembic("downgrade", PREVIOUS_REVISION)
     after = migration_db.tables()
-    assert before - after == EQUIPMENT_TABLES | LIBRARY_TABLES
+    assert before - after == NEW_TABLES
     assert {"users", "user_sessions", "fitness_plans", "plan_days"} <= after
 
     migration_db.alembic("upgrade", "head")
@@ -115,7 +131,7 @@ def test_upgrade_tolerates_tables_that_already_exist(migration_db) -> None:
     assert {"equipment", "user_equipment"} <= migration_db.tables()
 
     migration_db.alembic("upgrade", "head")
-    assert f"{LIBRARY_REVISION} (head)" in migration_db.current()
+    assert f"{PROFILE_REVISION} (head)" in migration_db.current()
 
 
 def test_upgrade_tolerates_library_tables_that_already_exist(migration_db) -> None:
@@ -130,8 +146,31 @@ def test_upgrade_tolerates_library_tables_that_already_exist(migration_db) -> No
         engine.dispose()
 
     migration_db.alembic("upgrade", "head")
-    assert f"{LIBRARY_REVISION} (head)" in migration_db.current()
+    assert f"{PROFILE_REVISION} (head)" in migration_db.current()
     assert "ix_exercise_definitions_movement_pattern" in migration_db.indexes("exercise_definitions")
+
+
+def test_upgrade_tolerates_profile_table_that_already_exists(migration_db) -> None:
+    migration_db.alembic("upgrade", LIBRARY_REVISION)
+
+    engine = create_engine(migration_db.url)
+    try:
+        Base.metadata.create_all(bind=engine, tables=[UserProfile.__table__])
+    finally:
+        engine.dispose()
+
+    migration_db.alembic("upgrade", "head")
+    assert f"{PROFILE_REVISION} (head)" in migration_db.current()
+
+
+def test_profile_check_constraints_exist_in_the_migrated_table(migration_db) -> None:
+    migration_db.alembic("upgrade", "head")
+    engine = create_engine(migration_db.url)
+    try:
+        names = {c["name"] for c in inspect(engine).get_check_constraints("user_profiles")}
+    finally:
+        engine.dispose()
+    assert {"ck_user_profiles_days_per_week", "ck_user_profiles_session_length"} <= names
 
 
 def test_migrated_schema_matches_models(migration_db) -> None:
@@ -140,7 +179,7 @@ def test_migrated_schema_matches_models(migration_db) -> None:
     engine = create_engine(migration_db.url)
     try:
         inspector = inspect(engine)
-        for model in (Equipment, UserEquipment, ExerciseDefinition, ExerciseEquipmentOption):
+        for model in (Equipment, UserEquipment, ExerciseDefinition, ExerciseEquipmentOption, UserProfile):
             table = model.__table__
             migrated_columns = {col["name"]: col for col in inspector.get_columns(table.name)}
             assert set(migrated_columns) == {col.name for col in table.columns}, table.name

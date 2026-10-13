@@ -19,6 +19,7 @@ setup_app_logging()
 
 from app.api.routes.auth import router as auth_router
 from app.api.routes.equipment import router as equipment_router
+from app.api.routes.profile import router as profile_router
 from app.api.routes.plan import router as plan_router
 from app.api.routes.users import router as users_router
 
@@ -63,6 +64,7 @@ app.add_middleware(
 )
 app.include_router(auth_router)
 app.include_router(equipment_router)
+app.include_router(profile_router)
 app.include_router(plan_router)
 app.include_router(users_router)
 

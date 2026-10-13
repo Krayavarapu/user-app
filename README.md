@@ -46,3 +46,11 @@ The plan generator chooses from a curated library (`app/data/exercise_library/ex
 - **Never hand-edit the generated JSON.** Edit the curation table (`app/scripts/exercise_curation.py`) or a rule, then rebuild: `python3 -m app.scripts.build_exercise_library` (downloads the pinned snapshot). A test fails if the committed JSON drifts from the rules.
 - **Removing an exercise** from the JSON deactivates it on the next seed instead of deleting it, so historic plans keep resolving.
 - **Known coverage gaps** (no equipment-free carries, bodyweight vertical pulls or upper-body isolation, and only advanced bodyweight vertical pushes) are listed in `tests/test_exercise_seed.py::KNOWN_COVERAGE_GAPS`; a test fails once one is filled so the entry gets removed.
+
+## User profile
+
+`GET /users/me/profile` and `PUT /users/me/profile` (authenticated; always the caller's own profile) hold training preferences used by plan generation: experience level, primary goal, days per week, session length, limitations (shoulder, knee, lower_back, wrist, hip, ankle, neck, each mild / moderate / severe) and equipment IDs from `GET /equipment`.
+
+- `PUT` replaces the whole profile and equipment in one transaction. `limitations` and `equipment_ids` must be sent (use `[]` for none) and unknown fields are rejected, so a typo can never silently erase saved limitations.
+- A user who has never saved a profile gets conservative defaults from `GET` (`is_default: true`): beginner, 3 days per week, 45 minutes, no limitations, no equipment.
+- Limitations only ever *remove* exercises, using the rules in `app/services/plan_pipeline/rules.py`. These are heuristics, not medical advice, and have not been reviewed by a coach or physical therapist. Free-text notes never change which exercises are offered.

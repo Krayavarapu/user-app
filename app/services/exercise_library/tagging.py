@@ -44,6 +44,8 @@ _KNEE_PIVOTING = re.compile(
     r"lateral lunge|side lunge|cossack|curtsy|\bskaters?\b|carioca|agility|shuffle|lateral bound|pivot"
 )
 _HIP_END_RANGE = re.compile(r"sumo|plie|cossack|lateral lunge|side lunge|frog|straddle|groin|adductor|90/90")
+# Hinge-pattern movements where the torso is supported or stays upright, so little spinal shear.
+_SUPPORTED_HINGE = re.compile(r"hip thrust|glute bridge|bridge")
 _SINGLE_LEG_STANCE = re.compile(r"single-?\s?leg|one-?\s?legged|step-?up")
 
 _TEMPO_BY_PATTERN = {
@@ -134,6 +136,8 @@ def derive_contraindications(
             tags.add("spine:axial_loading_heavy")
         elif pattern == "horizontal_pull" and re.search(r"bent-?\s?over|t-bar", n):
             tags.add("spine:axial_loading_heavy")
+    if pattern == "hinge" and loaded and not _SUPPORTED_HINGE.search(n):
+        tags.add("spine:loaded_hinge")
     if pattern == "core_flexion" and loaded:
         tags.add("spine:loaded_flexion")
 

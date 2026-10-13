@@ -524,7 +524,8 @@
         ]
       ],
       "contraindications": [
-        "spine:axial_loading_heavy"
+        "spine:axial_loading_heavy",
+        "spine:loaded_hinge"
       ],
       "goal_tags": [
         "general_fitness",
@@ -560,7 +561,8 @@
         ]
       ],
       "contraindications": [
-        "spine:axial_loading_heavy"
+        "spine:axial_loading_heavy",
+        "spine:loaded_hinge"
       ],
       "goal_tags": [
         "general_fitness",
@@ -601,7 +603,8 @@
       ],
       "contraindications": [
         "hip:end_range",
-        "spine:axial_loading_heavy"
+        "spine:axial_loading_heavy",
+        "spine:loaded_hinge"
       ],
       "goal_tags": [
         "general_fitness",
@@ -638,7 +641,8 @@
         ]
       ],
       "contraindications": [
-        "spine:axial_loading_heavy"
+        "spine:axial_loading_heavy",
+        "spine:loaded_hinge"
       ],
       "goal_tags": [
         "general_fitness",
@@ -676,7 +680,8 @@
         ]
       ],
       "contraindications": [
-        "spine:axial_loading_heavy"
+        "spine:axial_loading_heavy",
+        "spine:loaded_hinge"
       ],
       "goal_tags": [
         "general_fitness",
@@ -781,7 +786,9 @@
           "dumbbell"
         ]
       ],
-      "contraindications": [],
+      "contraindications": [
+        "spine:loaded_hinge"
+      ],
       "goal_tags": [
         "general_fitness",
         "hypertrophy",
@@ -814,7 +821,9 @@
           "dumbbell"
         ]
       ],
-      "contraindications": [],
+      "contraindications": [
+        "spine:loaded_hinge"
+      ],
       "goal_tags": [
         "general_fitness",
         "hypertrophy",
@@ -848,7 +857,8 @@
         ]
       ],
       "contraindications": [
-        "ankle:single_leg_balance"
+        "ankle:single_leg_balance",
+        "spine:loaded_hinge"
       ],
       "goal_tags": [
         "general_fitness",
@@ -955,7 +965,9 @@
           "kettlebell"
         ]
       ],
-      "contraindications": [],
+      "contraindications": [
+        "spine:loaded_hinge"
+      ],
       "goal_tags": [
         "general_fitness",
         "hypertrophy",
@@ -990,7 +1002,9 @@
           "kettlebell"
         ]
       ],
-      "contraindications": [],
+      "contraindications": [
+        "spine:loaded_hinge"
+      ],
       "goal_tags": [
         "general_fitness",
         "hypertrophy",
@@ -1024,7 +1038,8 @@
         ]
       ],
       "contraindications": [
-        "ankle:single_leg_balance"
+        "ankle:single_leg_balance",
+        "spine:loaded_hinge"
       ],
       "goal_tags": [
         "general_fitness",
@@ -1205,7 +1220,9 @@
           "cable_machine"
         ]
       ],
-      "contraindications": [],
+      "contraindications": [
+        "spine:loaded_hinge"
+      ],
       "goal_tags": [
         "general_fitness",
         "hypertrophy",
@@ -1240,7 +1257,9 @@
           "cable_machine"
         ]
       ],
-      "contraindications": [],
+      "contraindications": [
+        "spine:loaded_hinge"
+      ],
       "goal_tags": [
         "general_fitness",
         "hypertrophy",
