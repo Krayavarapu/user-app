@@ -104,3 +104,35 @@ def test_match_free_text_equipment_uses_active_catalog_rows(db_session) -> None:
 
 def test_match_free_text_equipment_with_empty_catalog_matches_nothing(db_session) -> None:
     assert match_free_text_equipment(db_session, "dumbbells").equipment_ids == ()
+
+
+# --- OpenAPI / Swagger UI ----------------------------------------------------------------------
+
+
+def test_openapi_advertises_a_bearer_scheme_so_docs_has_an_authorize_button(client) -> None:
+    schema = client.get("/openapi.json").json()
+    assert schema["components"]["securitySchemes"]["HTTPBearer"] == {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Paste the session_token from POST /auth/login.",
+    }
+    operation = schema["paths"]["/equipment"]["get"]
+    assert {"HTTPBearer": []} in operation["security"]
+
+
+def test_openapi_has_no_authorization_header_parameter(client) -> None:
+    """Swagger UI ignores a header parameter named Authorization, so it must not be declared."""
+    schema = client.get("/openapi.json").json()
+    for path, methods in schema["paths"].items():
+        for method, operation in methods.items():
+            names = {p["name"].lower() for p in operation.get("parameters", []) if p["in"] == "header"}
+            assert "authorization" not in names, (path, method)
+
+
+def test_bearer_and_bare_tokens_both_still_work_and_missing_is_401(client) -> None:
+    headers = _auth_header(client, "token-forms-01")
+    token = headers["Authorization"].split(" ", 1)[1]
+    assert client.get("/equipment", headers={"Authorization": f"Bearer {token}"}).status_code == 200
+    assert client.get("/equipment", headers={"Authorization": token}).status_code == 200
+    assert client.get("/equipment").status_code == 401
+    assert client.get("/equipment", headers={"Authorization": "Bearer nonsense"}).status_code == 401

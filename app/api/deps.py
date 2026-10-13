@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import logging
 
-from fastapi import Depends, Header, HTTPException, status
+from fastapi import Depends, HTTPException, Request, status
+from fastapi.security import HTTPBearer
 from sqlalchemy.orm import Session
 
 from app.crud.session import get_valid_user_id_for_token
@@ -12,6 +13,11 @@ from app.models.user import User
 
 logger = logging.getLogger(__name__)
 
+# Declared only so OpenAPI advertises a bearer scheme and /docs shows an "Authorize" button.
+# (Swagger UI silently ignores a plain header parameter named "Authorization".) It never rejects
+# a request itself; get_current_user_id below does the actual check.
+_bearer_scheme = HTTPBearer(auto_error=False, description="Paste the session_token from POST /auth/login.")
+
 
 def _token_prefix(token: str, n: int = 8) -> str:
     if not token:
@@ -20,9 +26,12 @@ def _token_prefix(token: str, n: int = 8) -> str:
 
 
 def get_current_user_id(
-    authorization: str = Header(default=""),
+    request: Request,
+    _scheme: object = Depends(_bearer_scheme),
     db: Session = Depends(get_db),
 ) -> str:
+    # Read the raw header so both "Bearer <token>" and a bare "<token>" keep working, as before.
+    authorization = request.headers.get("authorization", "")
     token = authorization.replace("Bearer ", "", 1).strip()
     user_id = get_valid_user_id_for_token(db, token)
     if not token:
